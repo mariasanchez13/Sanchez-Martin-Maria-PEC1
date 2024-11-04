@@ -1,0 +1,27 @@
+---
+title: "README"
+author: "María Sánchez Martín"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Informe del Dataset de Cachexia
+
+## Descripción del Dataset
+La cachexia es un complejo síndrome metabólico asociado a diversas enfermedades. Se caracteriza por una pérdida de masa muscular con o sin pérdida de masa grasa. Se han tomado un total de 77 muestras de orina, de las cuales 47 fueron de pacientes afectados y 30 de controles.
+
+## Estructura de los Datos
+- **Muestras**: 77
+- **Variables**: 63
+
+## Metadatos
+- `Patient ID`: identificador unitario de cada paciente.
+- `Muscle.loss`: Pérdida de masa muscular de cada muestra.
+
+
+## Código R para la Exploración
+El código utilizado para la exploración de datos está disponible en `Sanchez-Martin-Maria-PEC1-RScript.R`. 

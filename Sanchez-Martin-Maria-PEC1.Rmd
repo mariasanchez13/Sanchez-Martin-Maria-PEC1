@@ -1,0 +1,176 @@
+---
+title: "Sanchez-Martin-Maria-PEC1"
+author: "María Sánchez Martín"
+date: "`r Sys.Date()`"
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 4
+    latex_engine: xelatex
+  html_document:
+    toc: true
+    toc_depth: 4
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(tinytex.verbose = TRUE)
+```
+
+## PEC 1
+
+### Selección del dataset
+
+He seleccionado el *dataset de metabolómica* del repositorio de github. Lo he clonado en la carpeta destinada a la PEC1 de esta asignatura de acuerdo con el siguiente tutorial:
+
+-   <https://github.com/nutrimetabolomics/metaboData.git>
+
+Procedimiento:
+
+1.  Encima de la lista de archivos, haz clic en \<\> **Código**.
+
+2.  Copia la dirección URL del repositorio.
+
+3.  Abrir el terminar.
+
+4.  Cambia el directorio de trabajo actual a la ubicación en donde quieres clonar el directorio.
+
+5.  Escriba `git clone` y pegue la dirección URL que ha copiado antes.
+
+6.  Presione **Enter** para crear el clon local.
+
+Una vez tenemos el repositorio clonado, procedemos a visualizar los archivos que contiene y seleccionar el que más nos interese.
+
+Tras leer los archivos `README.html` y `Data_Catalog.xlsx`, he decidido seleccionar el dataset `2024-Cachexia`. De acuerdo con la información dada, Cachexia es un síndrome metabólico asociado a otras enfermedades y se caracteriza por la pérdida de masa muscular con o sin pérdida de masa grasa.
+
+Seleccionamos y abrimos los archivos de uso:
+
+```{r}
+data <- read.csv("metaboData/Datasets/2024-Cachexia/human_cachexia.csv", row.names = 1) # La primera columna contiene los identificadores
+```
+
+Únicamente poseemos un archivo que contiene tanto los datos como los metadatos de expresión.
+
+### Creación del contenedor `SummarizedExperiment`
+
+Información sobre el paquete de `Bioconductor` `SummarizedExperiment`:
+
+<https://bioconductor.org/packages/release/bioc/html/SummarizedExperiment.html>
+
+<https://bioconductor.org/packages/release/bioc/vignettes/SummarizedExperiment/inst/doc/SummarizedExperiment.html>
+
+<https://lcolladotor.github.io/rnaseq_LCG-UNAM_2021/objetos-de-bioconductor-para-datos-de-expresi%C3%B3n.html>
+
+De acuedo con el uso del paquete, hemos de tener los datos de expresión y los metadatos separados.
+
+```{r}
+metadata <- as.data.frame(data$Muscle.loss) # Metadatos, la primera columna contiene inrformación sobre la pérdida muscular
+expressiondata <- t(as.matrix(data[,-1])) # Convertimos los datos de expresión en matriz
+rownames(metadata) <- rownames(data)
+colnames(metadata) <- 'Muscle.loss'
+colnames(expressiondata) <- rownames(data)
+
+```
+
+!!!! Impportante¡¡¡ Las columnas de los datos de expresión deben coincidir con las filas de los metadatos, por eso hallamos la matriz traspuesta, así coincidirán (`t()`)
+
+Aplicamos la función de interés `SummarizedExperiment()`.
+
+```{r}
+library(SummarizedExperiment)
+se <- SummarizedExperiment(
+  assays = SimpleList(counts = expressiondata),
+  colData = metadata
+)
+```
+
+### Exploración del dataset
+
+Información general del dataset que contiene los datos de exresión:
+
+```{r}
+expr_data <- data[,-1]
+summary(expr_data)
+```
+
+```{r}
+# Información general
+se
+
+# Dimensiones
+dim(se)
+
+# Identificadores de muestras y características
+dimnames(se)
+
+# Metadatos
+colData(se)
+metadata(se)
+
+# Datos de expresión
+data_analysis <- assay(se, "counts")
+head(data_analysis)
+
+```
+
+Vamos a realizar un ANOVA sobre nuestros datos para determinar si existen diferencias significativas en las características estudiadas entre el grupo control y el grupo enfermo. Vamos a emplear el dataset original, en lugar del contenedor generado, ya que disponemos de todos los datos.
+
+```{r}
+table(data$Muscle.loss)
+ANOVA_result <- list()
+
+# Realizar ANOVA para cada característica
+for (col in names(data)[-1]) {
+  anova_mod <- aov(data[[col]] ~ Muscle.loss, data = data)
+  ANOVA_result[[col]] <- summary(anova_mod)
+}
+
+# p-valor < 0.05 = Valores sigmificativos, es decir, que difieren entre ambos grupos de datos
+significativos <- list()
+
+# Filtrar por p-value < 0.05
+for (p in names(ANOVA_result)) {
+  # Extraer el valor p del resumen del ANOVA
+  p_value <- ANOVA_result[[p]][[1]][["Pr(>F)"]][1]
+  
+  # Verificar si el p-value es menor a 0.05
+  if (!is.na(p_value) && p_value < 0.05) {
+    significativos[[p]] <- ANOVA_result[[p]]
+  }
+}
+
+# Tamaño
+significativos
+```
+
+De las 63 características que se han estudiado, de acuerdo con nuestro ANOVA, un total de 40 son significativas, es decir que difieren entre grupos. A partir de aquí, podríamos dividir el dataset y extraer los datos significativos.
+
+```{r}
+features_sig <- names(significativos)
+new_data <- data[, c("Muscle.loss", features_sig)]
+```
+
+
+### Exploración de perfil en GitHub
+
+Ya que no tenía cuenta en GitHub me he creado una. He creado un repositorio con el nombre Sanchez-Martin-Maria-PEC1 con la idea de subir los asrchivos que se especifican en el enunciado de la PEC1.
+
+Guardar el objeto contenedor con los datos y metadatos:
+
+```{r}
+save(se, file = "Sanchez-Martin-Maria-PEC1-SummarizedExperiment.Rda")
+```
+
+He ido generando los archivos necesarios de acuerdo a lo que se exige en el enunciado de la PEC1:
+
+-   Informe: `Sanchez-Martin-Maria-PEC1.Rmd`, `Sanchez-Martin-Maria-PEC1.pdf`, `Sanchez-Martin-Maria-PEC1.html`.
+
+-   El código R para la exploración de los datos: `Sanchez-Martin-Maria-PEC1-RScript.R`
+
+-   Los metadatos acerca del dataset: `Sanchez-Martin-Maria-PEC1-README.Rmd`
+
+-   El objeto contenedor con los datos y los metadatos en formato binario: `Sanchez-Martin-Maria-PEC1-SummarizedExperiment.Rda`
+
+-   Los datos en formato texto: `human_cachexia.csv`
+
+Enlace GitHub: <https://github.com/mariasanchez13/Sanchez-Martin-Maria-PEC1.git>
