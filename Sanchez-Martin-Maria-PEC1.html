@@ -11,7 +11,7 @@
 
 <meta name="author" content="María Sánchez Martín" />
 
-<meta name="date" content="2024-11-04" />
+<meta name="date" content="2024-11-06" />
 
 <title>Sanchez-Martin-Maria-PEC1</title>
 
@@ -352,31 +352,94 @@ display: none;
 
 <h1 class="title toc-ignore">Sanchez-Martin-Maria-PEC1</h1>
 <h4 class="author">María Sánchez Martín</h4>
-<h4 class="date">2024-11-04</h4>
+<h4 class="date">2024-11-06</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#pec-1" id="toc-pec-1">PEC 1</a>
+<li><a href="#abstract" id="toc-abstract">Abstract</a></li>
+<li><a href="#objetivos-del-estudio" id="toc-objetivos-del-estudio">Objetivos del estudio</a></li>
+<li><a href="#materiales-y-métodos" id="toc-materiales-y-métodos">Materiales y métodos</a>
 <ul>
-<li><a href="#selección-del-dataset" id="toc-selección-del-dataset">Selección del dataset</a></li>
+<li><a href="#materiales" id="toc-materiales">Materiales</a></li>
+<li><a href="#métodos" id="toc-métodos">Métodos</a>
+<ul>
+<li><a href="#selección-del-dataset" id="toc-selección-del-dataset">Selección del dataset:</a></li>
 <li><a href="#creación-del-contenedor-summarizedexperiment" id="toc-creación-del-contenedor-summarizedexperiment">Creación del
 contenedor <code>SummarizedExperiment</code></a></li>
-<li><a href="#exploración-del-dataset" id="toc-exploración-del-dataset">Exploración del dataset</a></li>
-<li><a href="#exploración-de-perfil-en-github" id="toc-exploración-de-perfil-en-github">Exploración de perfil en
+<li><a href="#creación-del-perfil-de-github" id="toc-creación-del-perfil-de-github">Creación del perfil de
 GitHub</a></li>
 </ul></li>
+</ul></li>
+<li><a href="#resultados" id="toc-resultados">Resultados</a></li>
+<li><a href="#discusión-y-limitaciones-y-conclusiones-del-estudio" id="toc-discusión-y-limitaciones-y-conclusiones-del-estudio">Discusión y
+limitaciones y conclusiones del estudio</a></li>
 </ul>
 </div>
 
-<div id="pec-1" class="section level2">
-<h2>PEC 1</h2>
-<div id="selección-del-dataset" class="section level3">
-<h3>Selección del dataset</h3>
-<p>He seleccionado el <em>dataset de metabolómica</em> del repositorio
-de github. Lo he clonado en la carpeta destinada a la PEC1 de esta
-asignatura de acuerdo con el siguiente tutorial:</p>
+<div id="abstract" class="section level2">
+<h2>Abstract</h2>
+<p>Esta primera PEC pretende ser un método de introducción a las ómicas
+mediante un ejercicio de repaso y ampliación. En ella se ha empleado el
+paquete <code>SummarizedExperiment</code> con la finalidad de crear un
+contenedor con datos de origen ómico, en este caso se ha seleccionado el
+dataset de <code>2024-Cachexia</code>. Se ha realizado un visionado de
+la distribución datos de expresión y se ha determinado que contiene
+información de 63 metabolitos o características diferentes para un total
+de 77 muestras, de las cuales 30 son controles y 47 enfermos. Además, se
+ha determinado que un total de 16 de estos metabolitos podrían ser
+candidatos como indicadores de la enfermedad</p>
+</div>
+<div id="objetivos-del-estudio" class="section level2">
+<h2>Objetivos del estudio</h2>
+<p>El objetivo de la realización de esta PEC es la introducción a las
+ómicas mediante un ejercicio de repaso y ampliación que permita trabajar
+con algunas de las herramientas y contenidos que se han trabajado a lo
+largo de este primer reto.</p>
+<p>Durante este primer reto, se han llevado a cabo un total de 3
+actividades. La primera introdujo el uso de la herramienta
+<code>Bioconductor</code> y las diversas utilidades de la misma, así
+como con el uso del paquete <code>GEOquery</code>, <code>Biobase</code>
+y empleando <code>ExpressionSets</code>.</p>
+<p>La segunda actividad introdujo a la ultrasecuenciación y se empleó el
+paquete <code>ShortRead</code> de <code>Bioconductor</code> para abrir
+archivos <code>FastQ</code> y la herramienta <code>Galaxy</code> para
+hacer control de calidad de los datos.</p>
+<p>Y en la última actividad, se comentaron diversos artículos que
+empleasen tecnologías ómicas, principalmente, para poder discutir el
+proceso de análisis de datos ómicos.</p>
+<p>El objetivo principal de esta PEC es planificar y ejecutar una
+versión simplificada del proceso de análisis de datos ómicos empleando y
+ampliando las herramientas y métodos aprendidos.</p>
+<p>Se ha seleccionado el dataset de metabolómica
+<code>2024-Cachexia</code>. De acuerdo con la información dada, Cachexia
+es un síndrome metabólico asociado a otras enfermedades y se caracteriza
+por la pérdida de masa muscular con o sin pérdida de masa grasa. Se
+quiere realizar una exploración de los datos de este dataset, así como
+determinar si algunos de los metabolitos podrían ser indicativos
+esenciales de esta enfermedad.</p>
+</div>
+<div id="materiales-y-métodos" class="section level2">
+<h2>Materiales y métodos</h2>
+<div id="materiales" class="section level3">
+<h3>Materiales</h3>
+<ul>
+<li><p>R y RStudio.</p></li>
+<li><p>Dataset de metabolómica:
+<code>human_cachexia.csv</code>.</p></li>
+<li><p>Paquete de <code>Bioconductor</code>:
+<code>SummarizedExperiment</code>.</p></li>
+<li><p>GitHub.</p></li>
+</ul>
+</div>
+<div id="métodos" class="section level3">
+<h3>Métodos</h3>
+<div id="selección-del-dataset" class="section level4">
+<h4>Selección del dataset:</h4>
+<p>Se ha seleccionado el <em>dataset de metabolómica</em> del
+repositorio de GitHub. Ha sido clonado en la carpeta destinada a la PEC1
+de esta asignatura de acuerdo con el siguiente tutorial:</p>
 <ul>
 <li><a href="https://github.com/nutrimetabolomics/metaboData.git" class="uri">https://github.com/nutrimetabolomics/metaboData.git</a></li>
 </ul>
@@ -393,777 +456,43 @@ copiado antes.</p></li>
 <li><p>Presione <strong>Enter</strong> para crear el clon
 local.</p></li>
 </ol>
-<p>Una vez tenemos el repositorio clonado, procedemos a visualizar los
-archivos que contiene y seleccionar el que más nos interese.</p>
+<p>Una vez el repositorio ha sido clonado, se procede a la visualización
+de los archivos que contiene y selección del que presente mayor
+interés.</p>
 <p>Tras leer los archivos <code>README.html</code> y
-<code>Data_Catalog.xlsx</code>, he decidido seleccionar el dataset
+<code>Data_Catalog.xlsx</code>, se ha decidido seleccionar el dataset
 <code>2024-Cachexia</code>. De acuerdo con la información dada, Cachexia
 es un síndrome metabólico asociado a otras enfermedades y se caracteriza
 por la pérdida de masa muscular con o sin pérdida de masa grasa.</p>
-<p>Seleccionamos y abrimos los archivos de uso:</p>
 <pre class="r"><code>data &lt;- read.csv(&quot;metaboData/Datasets/2024-Cachexia/human_cachexia.csv&quot;, row.names = 1) # La primera columna contiene los identificadores</code></pre>
-<p>Únicamente poseemos un archivo que contiene tanto los datos como los
-metadatos de expresión.</p>
 </div>
-<div id="creación-del-contenedor-summarizedexperiment" class="section level3">
-<h3>Creación del contenedor <code>SummarizedExperiment</code></h3>
+<div id="creación-del-contenedor-summarizedexperiment" class="section level4">
+<h4>Creación del contenedor <code>SummarizedExperiment</code></h4>
 <p>Información sobre el paquete de <code>Bioconductor</code>
 <code>SummarizedExperiment</code>:</p>
 <p><a href="https://bioconductor.org/packages/release/bioc/html/SummarizedExperiment.html" class="uri">https://bioconductor.org/packages/release/bioc/html/SummarizedExperiment.html</a></p>
 <p><a href="https://bioconductor.org/packages/release/bioc/vignettes/SummarizedExperiment/inst/doc/SummarizedExperiment.html" class="uri">https://bioconductor.org/packages/release/bioc/vignettes/SummarizedExperiment/inst/doc/SummarizedExperiment.html</a></p>
 <p><a href="https://lcolladotor.github.io/rnaseq_LCG-UNAM_2021/objetos-de-bioconductor-para-datos-de-expresi%C3%B3n.html" class="uri">https://lcolladotor.github.io/rnaseq_LCG-UNAM_2021/objetos-de-bioconductor-para-datos-de-expresi%C3%B3n.html</a></p>
-<p>De acuedo con el uso del paquete, hemos de tener los datos de
+<p>De acuedo con el uso del paquete, se han de tener los datos de
 expresión y los metadatos separados.</p>
 <pre class="r"><code>metadata &lt;- as.data.frame(data$Muscle.loss) # Metadatos, la primera columna contiene inrformación sobre la pérdida muscular
 expressiondata &lt;- t(as.matrix(data[,-1])) # Convertimos los datos de expresión en matriz
 rownames(metadata) &lt;- rownames(data)
 colnames(metadata) &lt;- &#39;Muscle.loss&#39;
 colnames(expressiondata) &lt;- rownames(data)</code></pre>
-<p>!!!! Impportante¡¡¡ Las columnas de los datos de expresión deben
-coincidir con las filas de los metadatos, por eso hallamos la matriz
-traspuesta, así coincidirán (<code>t()</code>)</p>
-<p>Aplicamos la función de interés
-<code>SummarizedExperiment()</code>.</p>
-<pre class="r"><code>library(SummarizedExperiment)</code></pre>
-<pre><code>## Cargando paquete requerido: MatrixGenerics</code></pre>
-<pre><code>## Cargando paquete requerido: matrixStats</code></pre>
-<pre><code>## 
-## Adjuntando el paquete: &#39;MatrixGenerics&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:matrixStats&#39;:
-## 
-##     colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
-##     colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
-##     colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
-##     colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
-##     colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
-##     colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
-##     colWeightedMeans, colWeightedMedians, colWeightedSds,
-##     colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
-##     rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
-##     rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
-##     rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
-##     rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
-##     rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
-##     rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
-##     rowWeightedSds, rowWeightedVars</code></pre>
-<pre><code>## Cargando paquete requerido: GenomicRanges</code></pre>
-<pre><code>## Cargando paquete requerido: stats4</code></pre>
-<pre><code>## Cargando paquete requerido: BiocGenerics</code></pre>
-<pre><code>## 
-## Adjuntando el paquete: &#39;BiocGenerics&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     IQR, mad, sd, var, xtabs</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     anyDuplicated, aperm, append, as.data.frame, basename, cbind,
-##     colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
-##     get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply,
-##     match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
-##     Position, rank, rbind, Reduce, rownames, sapply, setdiff, table,
-##     tapply, union, unique, unsplit, which.max, which.min</code></pre>
-<pre><code>## Cargando paquete requerido: S4Vectors</code></pre>
-<pre><code>## 
-## Adjuntando el paquete: &#39;S4Vectors&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:utils&#39;:
-## 
-##     findMatches</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     expand.grid, I, unname</code></pre>
-<pre><code>## Cargando paquete requerido: IRanges</code></pre>
-<pre><code>## 
-## Adjuntando el paquete: &#39;IRanges&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:grDevices&#39;:
-## 
-##     windows</code></pre>
-<pre><code>## Cargando paquete requerido: GenomeInfoDb</code></pre>
-<pre><code>## Cargando paquete requerido: Biobase</code></pre>
-<pre><code>## Welcome to Bioconductor
-## 
-##     Vignettes contain introductory material; view with
-##     &#39;browseVignettes()&#39;. To cite Bioconductor, see
-##     &#39;citation(&quot;Biobase&quot;)&#39;, and for packages &#39;citation(&quot;pkgname&quot;)&#39;.</code></pre>
-<pre><code>## 
-## Adjuntando el paquete: &#39;Biobase&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:MatrixGenerics&#39;:
-## 
-##     rowMedians</code></pre>
-<pre><code>## The following objects are masked from &#39;package:matrixStats&#39;:
-## 
-##     anyMissing, rowMedians</code></pre>
-<pre class="r"><code>se &lt;- SummarizedExperiment(
-  assays = SimpleList(counts = expressiondata),
-  colData = metadata
-)</code></pre>
+<p>La creacción del contenedor se ha basado en el ejemplo del tutorial
+de uso del paquete <code>SummarizedExperiment</code>.</p>
 </div>
-<div id="exploración-del-dataset" class="section level3">
-<h3>Exploración del dataset</h3>
-<p>Información general del dataset que contiene los datos de
-exresión:</p>
-<pre class="r"><code>expr_data &lt;- data[,-1]
-summary(expr_data)</code></pre>
-<pre><code>##  X1.6.Anhydro.beta.D.glucose X1.Methylnicotinamide X2.Aminobutyrate
-##  Min.   :  4.71              Min.   :   6.42       Min.   :  1.28  
-##  1st Qu.: 28.79              1st Qu.:  15.80       1st Qu.:  5.26  
-##  Median : 45.60              Median :  36.60       Median : 10.49  
-##  Mean   :105.63              Mean   :  71.57       Mean   : 18.16  
-##  3rd Qu.:141.17              3rd Qu.:  73.70       3rd Qu.: 19.49  
-##  Max.   :685.40              Max.   :1032.77       Max.   :172.43  
-##  X2.Hydroxyisobutyrate X2.Oxoglutarate   X3.Aminoisobutyrate X3.Hydroxybutyrate
-##  Min.   : 4.85         Min.   :   5.53   Min.   :   2.61     Min.   :  1.70    
-##  1st Qu.:15.80         1st Qu.:  22.42   1st Qu.:  11.70     1st Qu.:  5.99    
-##  Median :32.46         Median :  55.15   Median :  22.65     Median : 11.70    
-##  Mean   :37.25         Mean   : 145.09   Mean   :  76.76     Mean   : 21.72    
-##  3rd Qu.:54.60         3rd Qu.:  92.76   3rd Qu.:  56.26     3rd Qu.: 29.96    
-##  Max.   :93.69         Max.   :2465.13   Max.   :1480.30     Max.   :175.91    
-##  X3.Hydroxyisovalerate X3.Indoxylsulfate X4.Hydroxyphenylacetate
-##  Min.   :  0.92        Min.   :  27.66   Min.   : 15.49         
-##  1st Qu.:  5.26        1st Qu.:  82.27   1st Qu.: 41.68         
-##  Median : 12.55        Median : 144.03   Median : 70.11         
-##  Mean   : 21.65        Mean   : 218.88   Mean   :112.02         
-##  3rd Qu.: 30.27        3rd Qu.: 333.62   3rd Qu.:145.47         
-##  Max.   :164.02        Max.   :1043.15   Max.   :796.32         
-##     Acetate          Acetone          Adipate          Alanine       
-##  Min.   :  3.49   Min.   :  2.29   Min.   :  1.55   Min.   :  16.78  
-##  1st Qu.: 16.28   1st Qu.:  4.95   1st Qu.:  6.11   1st Qu.:  78.26  
-##  Median : 39.65   Median :  7.10   Median : 10.18   Median : 194.42  
-##  Mean   : 66.14   Mean   : 11.43   Mean   : 24.76   Mean   : 273.56  
-##  3rd Qu.: 86.49   3rd Qu.: 10.49   3rd Qu.: 19.11   3rd Qu.: 399.41  
-##  Max.   :411.58   Max.   :206.44   Max.   :327.01   Max.   :1312.91  
-##    Asparagine        Betaine         Carnitine         Citrate        
-##  Min.   :  6.69   Min.   :  2.29   Min.   :  2.18   Min.   :   59.74  
-##  1st Qu.: 20.49   1st Qu.: 28.79   1st Qu.: 14.44   1st Qu.:  788.40  
-##  Median : 42.10   Median : 64.72   Median : 23.81   Median : 1790.05  
-##  Mean   : 62.28   Mean   : 90.32   Mean   : 52.09   Mean   : 2235.35  
-##  3rd Qu.: 89.12   3rd Qu.:127.74   3rd Qu.: 60.95   3rd Qu.: 3071.74  
-##  Max.   :273.14   Max.   :391.51   Max.   :487.85   Max.   :13629.61  
-##     Creatine         Creatinine    Dimethylamine      Ethanolamine    
-##  Min.   :   2.75   Min.   : 1002   Min.   :  41.26   Min.   :  16.12  
-##  1st Qu.:  17.64   1st Qu.: 3498   1st Qu.: 142.59   1st Qu.:  86.49  
-##  Median :  44.26   Median : 7631   Median : 304.90   Median : 204.38  
-##  Mean   : 126.83   Mean   : 8734   Mean   : 358.17   Mean   : 276.26  
-##  3rd Qu.: 117.92   3rd Qu.:12333   3rd Qu.: 454.86   3rd Qu.: 407.48  
-##  Max.   :1863.11   Max.   :33860   Max.   :1556.20   Max.   :1436.55  
-##     Formate            Fucose          Fumarate        Glucose       
-##  Min.   :   6.42   Min.   :  5.70   Min.   : 0.79   Min.   :  26.84  
-##  1st Qu.:  53.52   1st Qu.: 29.37   1st Qu.: 2.23   1st Qu.:  80.64  
-##  Median :  95.58   Median : 61.56   Median : 4.10   Median : 210.61  
-##  Mean   : 147.40   Mean   : 88.67   Mean   : 8.44   Mean   : 559.85  
-##  3rd Qu.: 167.34   3rd Qu.:123.97   3rd Qu.: 7.85   3rd Qu.: 407.48  
-##  Max.   :1480.30   Max.   :407.48   Max.   :96.54   Max.   :8690.62  
-##    Glutamine          Glycine          Glycolate      Guanidoacetate  
-##  Min.   :  23.34   Min.   :  38.09   Min.   :  5.42   Min.   :  7.03  
-##  1st Qu.: 113.30   1st Qu.: 262.43   1st Qu.: 50.91   1st Qu.: 33.78  
-##  Median : 225.88   Median : 528.48   Median :130.32   Median : 64.72  
-##  Mean   : 306.87   Mean   : 880.72   Mean   :187.99   Mean   : 86.37  
-##  3rd Qu.: 445.86   3rd Qu.:1096.63   3rd Qu.:267.74   3rd Qu.:108.85  
-##  Max.   :1685.81   Max.   :5064.45   Max.   :720.54   Max.   :561.16  
-##    Hippurate          Histidine        Hypoxanthine      Isoleucine    
-##  Min.   :   92.76   Min.   :  14.15   Min.   :  3.78   Min.   : 1.790  
-##  1st Qu.:  492.75   1st Qu.:  66.69   1st Qu.: 20.70   1st Qu.: 3.900  
-##  Median : 1224.15   Median : 174.16   Median : 40.04   Median : 7.170  
-##  Mean   : 2286.84   Mean   : 292.64   Mean   : 61.10   Mean   : 8.709  
-##  3rd Qu.: 2921.93   3rd Qu.: 419.89   3rd Qu.: 83.93   3rd Qu.:11.250  
-##  Max.   :19341.34   Max.   :1863.11   Max.   :265.07   Max.   :40.040  
-##     Lactate           Leucine           Lysine        Methylamine   
-##  Min.   :   7.32   Min.   :  2.51   Min.   : 10.49   Min.   : 1.51  
-##  1st Qu.:  35.52   1st Qu.:  9.12   1st Qu.: 30.27   1st Qu.: 5.26  
-##  Median :  81.45   Median : 19.11   Median : 69.41   Median :14.73  
-##  Mean   : 158.46   Mean   : 24.36   Mean   :108.79   Mean   :17.38  
-##  3rd Qu.: 139.77   3rd Qu.: 31.19   3rd Qu.:121.51   3rd Qu.:24.05  
-##  Max.   :3640.95   Max.   :103.54   Max.   :788.40   Max.   :52.46  
-##  Methylguanidine  N.N.Dimethylglycine O.Acetylcarnitine  Pantothenate   
-##  Min.   :  1.70   Min.   :  0.79      Min.   :  1.23    Min.   :  2.59  
-##  1st Qu.:  4.26   1st Qu.:  7.03      1st Qu.:  3.94    1st Qu.: 11.13  
-##  Median :  7.85   Median : 21.98      Median : 11.47    Median : 22.65  
-##  Mean   : 15.32   Mean   : 26.35      Mean   : 19.73    Mean   : 44.88  
-##  3rd Qu.: 19.30   3rd Qu.: 40.04      3rd Qu.: 20.91    3rd Qu.: 41.26  
-##  Max.   :141.17   Max.   :120.30      Max.   :254.68    Max.   :692.29  
-##  Pyroglutamate        Pyruvate       Quinolinate         Serine       
-##  Min.   :  21.33   Min.   :  0.90   Min.   :  5.21   Min.   :  16.12  
-##  1st Qu.:  68.72   1st Qu.:  4.85   1st Qu.: 26.58   1st Qu.:  83.10  
-##  Median : 157.59   Median : 13.46   Median : 51.42   Median : 142.59  
-##  Mean   : 211.45   Mean   : 21.29   Mean   : 66.44   Mean   : 197.69  
-##  3rd Qu.: 301.87   3rd Qu.: 29.08   3rd Qu.: 87.36   3rd Qu.: 270.43  
-##  Max.   :1064.22   Max.   :184.93   Max.   :259.82   Max.   :1248.88  
-##    Succinate         Sucrose           Tartrate         Taurine       
-##  Min.   :  1.72   Min.   :   6.49   Min.   :  2.20   Min.   :  17.81  
-##  1st Qu.:  8.58   1st Qu.:  19.30   1st Qu.:  6.89   1st Qu.:  99.48  
-##  Median : 30.88   Median :  40.85   Median : 12.94   Median : 249.64  
-##  Mean   : 60.23   Mean   : 113.23   Mean   : 40.00   Mean   : 525.12  
-##  3rd Qu.: 74.44   3rd Qu.:  94.63   3rd Qu.: 25.79   3rd Qu.: 665.14  
-##  Max.   :589.93   Max.   :2079.74   Max.   :837.15   Max.   :4272.69  
-##    Threonine       Trigonelline     Trimethylamine.N.oxide   Tryptophan    
-##  Min.   :  8.25   Min.   :  10.07   Min.   :  55.7         Min.   :  8.67  
-##  1st Qu.: 31.82   1st Qu.:  53.52   1st Qu.: 175.9         1st Qu.: 21.33  
-##  Median : 64.07   Median : 114.43   Median : 383.8         Median : 46.99  
-##  Mean   : 95.36   Mean   : 270.44   Mean   : 652.2         Mean   : 66.24  
-##  3rd Qu.:137.00   3rd Qu.: 340.36   3rd Qu.: 735.1         3rd Qu.: 96.54  
-##  Max.   :450.34   Max.   :2252.96   Max.   :5486.2         Max.   :259.82  
-##     Tyrosine          Uracil           Valine           Xylose       
-##  Min.   :  4.22   Min.   :  3.10   Min.   :  4.10   Min.   :  10.07  
-##  1st Qu.: 23.57   1st Qu.: 11.94   1st Qu.: 12.18   1st Qu.:  29.96  
-##  Median : 60.34   Median : 27.39   Median : 33.12   Median :  50.40  
-##  Mean   : 81.76   Mean   : 35.56   Mean   : 35.67   Mean   : 100.93  
-##  3rd Qu.:113.30   3rd Qu.: 44.26   3rd Qu.: 50.40   3rd Qu.:  89.12  
-##  Max.   :539.15   Max.   :179.47   Max.   :160.77   Max.   :2164.62  
-##  cis.Aconitate      myo.Inositol    trans.Aconitate  pi.Methylhistidine
-##  Min.   :  12.94   Min.   : 11.59   Min.   :  4.90   Min.   :  11.36   
-##  1st Qu.:  36.23   1st Qu.: 30.27   1st Qu.: 12.43   1st Qu.:  67.36   
-##  Median : 129.02   Median : 78.26   Median : 26.84   Median : 162.39   
-##  Mean   : 204.22   Mean   :135.40   Mean   : 40.63   Mean   : 370.29   
-##  3rd Qu.: 254.68   3rd Qu.:167.34   3rd Qu.: 57.40   3rd Qu.: 387.61   
-##  Max.   :1863.11   Max.   :854.06   Max.   :217.02   Max.   :2697.28   
-##  tau.Methylhistidine
-##  Min.   :  8.00     
-##  1st Qu.: 27.39     
-##  Median : 68.72     
-##  Mean   : 89.69     
-##  3rd Qu.:130.32     
-##  Max.   :317.35</code></pre>
-<pre class="r"><code># Información general
-se</code></pre>
-<pre><code>## class: SummarizedExperiment 
-## dim: 63 77 
-## metadata(0):
-## assays(1): counts
-## rownames(63): X1.6.Anhydro.beta.D.glucose X1.Methylnicotinamide ...
-##   pi.Methylhistidine tau.Methylhistidine
-## rowData names(0):
-## colnames(77): PIF_178 PIF_087 ... NETL_003_V1 NETL_003_V2
-## colData names(1): Muscle.loss</code></pre>
-<pre class="r"><code># Dimensiones
-dim(se)</code></pre>
-<pre><code>## [1] 63 77</code></pre>
-<pre class="r"><code># Identificadores de muestras y características
-dimnames(se)</code></pre>
-<pre><code>## [[1]]
-##  [1] &quot;X1.6.Anhydro.beta.D.glucose&quot; &quot;X1.Methylnicotinamide&quot;      
-##  [3] &quot;X2.Aminobutyrate&quot;            &quot;X2.Hydroxyisobutyrate&quot;      
-##  [5] &quot;X2.Oxoglutarate&quot;             &quot;X3.Aminoisobutyrate&quot;        
-##  [7] &quot;X3.Hydroxybutyrate&quot;          &quot;X3.Hydroxyisovalerate&quot;      
-##  [9] &quot;X3.Indoxylsulfate&quot;           &quot;X4.Hydroxyphenylacetate&quot;    
-## [11] &quot;Acetate&quot;                     &quot;Acetone&quot;                    
-## [13] &quot;Adipate&quot;                     &quot;Alanine&quot;                    
-## [15] &quot;Asparagine&quot;                  &quot;Betaine&quot;                    
-## [17] &quot;Carnitine&quot;                   &quot;Citrate&quot;                    
-## [19] &quot;Creatine&quot;                    &quot;Creatinine&quot;                 
-## [21] &quot;Dimethylamine&quot;               &quot;Ethanolamine&quot;               
-## [23] &quot;Formate&quot;                     &quot;Fucose&quot;                     
-## [25] &quot;Fumarate&quot;                    &quot;Glucose&quot;                    
-## [27] &quot;Glutamine&quot;                   &quot;Glycine&quot;                    
-## [29] &quot;Glycolate&quot;                   &quot;Guanidoacetate&quot;             
-## [31] &quot;Hippurate&quot;                   &quot;Histidine&quot;                  
-## [33] &quot;Hypoxanthine&quot;                &quot;Isoleucine&quot;                 
-## [35] &quot;Lactate&quot;                     &quot;Leucine&quot;                    
-## [37] &quot;Lysine&quot;                      &quot;Methylamine&quot;                
-## [39] &quot;Methylguanidine&quot;             &quot;N.N.Dimethylglycine&quot;        
-## [41] &quot;O.Acetylcarnitine&quot;           &quot;Pantothenate&quot;               
-## [43] &quot;Pyroglutamate&quot;               &quot;Pyruvate&quot;                   
-## [45] &quot;Quinolinate&quot;                 &quot;Serine&quot;                     
-## [47] &quot;Succinate&quot;                   &quot;Sucrose&quot;                    
-## [49] &quot;Tartrate&quot;                    &quot;Taurine&quot;                    
-## [51] &quot;Threonine&quot;                   &quot;Trigonelline&quot;               
-## [53] &quot;Trimethylamine.N.oxide&quot;      &quot;Tryptophan&quot;                 
-## [55] &quot;Tyrosine&quot;                    &quot;Uracil&quot;                     
-## [57] &quot;Valine&quot;                      &quot;Xylose&quot;                     
-## [59] &quot;cis.Aconitate&quot;               &quot;myo.Inositol&quot;               
-## [61] &quot;trans.Aconitate&quot;             &quot;pi.Methylhistidine&quot;         
-## [63] &quot;tau.Methylhistidine&quot;        
-## 
-## [[2]]
-##  [1] &quot;PIF_178&quot;      &quot;PIF_087&quot;      &quot;PIF_090&quot;      &quot;NETL_005_V1&quot;  &quot;PIF_115&quot;     
-##  [6] &quot;PIF_110&quot;      &quot;NETL_019_V1&quot;  &quot;NETCR_014_V1&quot; &quot;NETCR_014_V2&quot; &quot;PIF_154&quot;     
-## [11] &quot;NETL_022_V1&quot;  &quot;NETL_022_V2&quot;  &quot;NETL_008_V1&quot;  &quot;PIF_146&quot;      &quot;PIF_119&quot;     
-## [16] &quot;PIF_099&quot;      &quot;PIF_162&quot;      &quot;PIF_160&quot;      &quot;PIF_113&quot;      &quot;PIF_143&quot;     
-## [21] &quot;NETCR_007_V1&quot; &quot;NETCR_007_V2&quot; &quot;PIF_137&quot;      &quot;PIF_100&quot;      &quot;NETL_004_V1&quot; 
-## [26] &quot;PIF_094&quot;      &quot;PIF_132&quot;      &quot;PIF_163&quot;      &quot;NETCR_003_V1&quot; &quot;NETL_028_V1&quot; 
-## [31] &quot;NETL_028_V2&quot;  &quot;NETCR_013_V1&quot; &quot;NETL_020_V1&quot;  &quot;NETL_020_V2&quot;  &quot;PIF_192&quot;     
-## [36] &quot;NETCR_012_V1&quot; &quot;NETCR_012_V2&quot; &quot;PIF_089&quot;      &quot;NETCR_002_V1&quot; &quot;PIF_179&quot;     
-## [41] &quot;PIF_114&quot;      &quot;NETCR_006_V1&quot; &quot;PIF_141&quot;      &quot;NETCR_025_V1&quot; &quot;NETCR_025_V2&quot;
-## [46] &quot;NETCR_016_V1&quot; &quot;PIF_116&quot;      &quot;PIF_191&quot;      &quot;PIF_164&quot;      &quot;NETL_013_V1&quot; 
-## [51] &quot;PIF_188&quot;      &quot;PIF_195&quot;      &quot;NETCR_015_V1&quot; &quot;PIF_102&quot;      &quot;NETL_010_V1&quot; 
-## [56] &quot;NETL_010_V2&quot;  &quot;NETL_001_V1&quot;  &quot;NETCR_015_V2&quot; &quot;NETCR_005_V1&quot; &quot;PIF_111&quot;     
-## [61] &quot;PIF_171&quot;      &quot;NETCR_008_V1&quot; &quot;NETCR_008_V2&quot; &quot;NETL_017_V1&quot;  &quot;NETL_017_V2&quot; 
-## [66] &quot;NETL_002_V1&quot;  &quot;NETL_002_V2&quot;  &quot;PIF_190&quot;      &quot;NETCR_009_V1&quot; &quot;NETCR_009_V2&quot;
-## [71] &quot;NETL_007_V1&quot;  &quot;PIF_112&quot;      &quot;NETCR_019_V2&quot; &quot;NETL_012_V1&quot;  &quot;NETL_012_V2&quot; 
-## [76] &quot;NETL_003_V1&quot;  &quot;NETL_003_V2&quot;</code></pre>
-<pre class="r"><code># Metadatos
-colData(se)</code></pre>
-<pre><code>## DataFrame with 77 rows and 1 column
-##              Muscle.loss
-##              &lt;character&gt;
-## PIF_178         cachexic
-## PIF_087         cachexic
-## PIF_090         cachexic
-## NETL_005_V1     cachexic
-## PIF_115         cachexic
-## ...                  ...
-## NETCR_019_V2     control
-## NETL_012_V1      control
-## NETL_012_V2      control
-## NETL_003_V1      control
-## NETL_003_V2      control</code></pre>
-<pre class="r"><code>metadata(se)</code></pre>
-<pre><code>## list()</code></pre>
-<pre class="r"><code># Datos de expresión
-data_analysis &lt;- assay(se, &quot;counts&quot;)
-head(data_analysis)</code></pre>
-<pre><code>##                             PIF_178 PIF_087 PIF_090 NETL_005_V1 PIF_115 PIF_110
-## X1.6.Anhydro.beta.D.glucose   40.85   62.18  270.43      154.47   22.20  212.72
-## X1.Methylnicotinamide         65.37  340.36   64.72       52.98   73.70   31.82
-## X2.Aminobutyrate              18.73   24.29   12.18      172.43   15.64   18.36
-## X2.Hydroxyisobutyrate         26.05   41.68   65.37       74.44   83.93   80.64
-## X2.Oxoglutarate               71.52   67.36   23.81     1199.91   33.12   47.94
-## X3.Aminoisobutyrate         1480.30  116.75   14.30      555.57   29.67   17.46
-##                             NETL_019_V1 NETCR_014_V1 NETCR_014_V2 PIF_154
-## X1.6.Anhydro.beta.D.glucose      151.41        31.50        51.42  117.92
-## X1.Methylnicotinamide             36.60         6.82        30.27   52.46
-## X2.Aminobutyrate                   8.67         4.18         7.54   19.49
-## X2.Hydroxyisobutyrate             42.52        12.94        34.81   72.24
-## X2.Oxoglutarate                  223.63        25.03        80.64   73.70
-## X3.Aminoisobutyrate               56.26         8.67        17.99   57.97
-##                             NETL_022_V1 NETL_022_V2 NETL_008_V1 PIF_146 PIF_119
-## X1.6.Anhydro.beta.D.glucose       20.70      127.74       59.74   89.12   23.57
-## X1.Methylnicotinamide            221.41      177.68       50.91   32.79    6.89
-## X2.Aminobutyrate                  15.18       12.68        6.82   10.38    2.12
-## X2.Hydroxyisobutyrate             28.79       15.03       46.06   32.14    7.85
-## X2.Oxoglutarate                  357.81       68.03      111.05   32.46    8.33
-## X3.Aminoisobutyrate               93.69      105.64        8.08   43.38    2.97
-##                             PIF_099 PIF_162 PIF_160 PIF_113 PIF_143
-## X1.6.Anhydro.beta.D.glucose   41.26  589.93  112.17  167.34  183.09
-## X1.Methylnicotinamide          8.67   21.98   25.28   19.89   90.92
-## X2.Aminobutyrate               2.56   15.18   15.49   13.46    8.94
-## X2.Hydroxyisobutyrate          7.85   46.06   47.94   31.19   64.07
-## X2.Oxoglutarate                6.89   32.79   28.79   47.94   20.49
-## X3.Aminoisobutyrate            6.36   31.82   16.12   79.04   18.73
-##                             NETCR_007_V1 NETCR_007_V2 PIF_137 PIF_100
-## X1.6.Anhydro.beta.D.glucose       208.51        34.81  333.62   32.46
-## X1.Methylnicotinamide              53.52        95.58   35.87    9.68
-## X2.Aminobutyrate                    5.26        23.57    7.92    3.90
-## X2.Hydroxyisobutyrate              47.94        68.03   54.60   11.02
-## X2.Oxoglutarate                   212.72       287.15   20.49  170.72
-## X3.Aminoisobutyrate                50.40       104.58   63.43    2.97
-##                             NETL_004_V1 PIF_094 PIF_132 PIF_163 NETCR_003_V1
-## X1.6.Anhydro.beta.D.glucose        4.71   68.72  214.86  304.90        37.71
-## X1.Methylnicotinamide             11.13   13.87  127.74   25.79        10.80
-## X2.Aminobutyrate                  43.38   12.18   31.50   27.11         5.00
-## X2.Hydroxyisobutyrate             30.88   25.03   33.78   40.45         8.25
-## X2.Oxoglutarate                  104.58   28.22   88.23   70.81        11.70
-## X3.Aminoisobutyrate               54.05   72.97   64.07  126.47         8.41
-##                             NETL_028_V1 NETL_028_V2 NETCR_013_V1 NETL_020_V1
-## X1.6.Anhydro.beta.D.glucose       45.60       34.12       107.77       13.33
-## X1.Methylnicotinamide            473.43       92.76        16.61       50.91
-## X2.Aminobutyrate                  16.28        8.25        26.84        2.92
-## X2.Hydroxyisobutyrate             63.43       16.61        32.46       40.85
-## X2.Oxoglutarate                  221.41       55.15        62.80       46.99
-## X3.Aminoisobutyrate               15.49        3.39        29.67       22.42
-##                             NETL_020_V2 PIF_192 NETCR_012_V1 NETCR_012_V2
-## X1.6.Anhydro.beta.D.glucose       27.94  141.17        14.01       244.69
-## X1.Methylnicotinamide             80.64   68.03        46.06       116.75
-## X2.Aminobutyrate                  15.80   40.85        29.08        40.04
-## X2.Hydroxyisobutyrate             64.72   12.81        24.53        61.56
-## X2.Oxoglutarate                   88.23   26.05        64.07       174.16
-## X3.Aminoisobutyrate               11.70   21.76        13.07        53.52
-##                             PIF_089 NETCR_002_V1 PIF_179 PIF_114 NETCR_006_V1
-## X1.6.Anhydro.beta.D.glucose  123.97       141.17   35.16  685.40       278.66
-## X1.Methylnicotinamide         81.45        28.50   26.58   36.23        40.45
-## X2.Aminobutyrate              55.15        20.29    5.21   32.46        55.15
-## X2.Hydroxyisobutyrate         70.81        14.30   30.27   85.63        51.42
-## X2.Oxoglutarate               92.76        97.51    7.39   25.03        74.44
-## X3.Aminoisobutyrate          561.16         8.41    8.41  184.93       354.25
-##                             PIF_141 NETCR_025_V1 NETCR_025_V2 NETCR_016_V1
-## X1.6.Anhydro.beta.D.glucose   15.80        29.96        16.95       292.95
-## X1.Methylnicotinamide         23.57        96.54       114.43        57.97
-## X2.Aminobutyrate              17.99         6.55         2.53       167.34
-## X2.Hydroxyisobutyrate         37.34        65.37        77.48        82.27
-## X2.Oxoglutarate               21.33      1053.63      2465.13       468.72
-## X3.Aminoisobutyrate           26.84        14.15        19.49        53.52
-##                             PIF_116 PIF_191 PIF_164 NETL_013_V1 PIF_188 PIF_195
-## X1.6.Anhydro.beta.D.glucose   29.67   18.92  127.74       34.81   65.37   15.18
-## X1.Methylnicotinamide         70.11   24.53 1032.77       12.30   24.05   94.63
-## X2.Aminobutyrate               5.58    3.29    8.58        5.87    4.71   11.36
-## X2.Hydroxyisobutyrate         18.73   10.49   66.02       15.18   15.80    8.17
-## X2.Oxoglutarate                5.53    9.68   38.09       16.78    7.24    5.64
-## X3.Aminoisobutyrate            2.61   26.84   66.69       11.25    3.13    5.99
-##                             NETCR_015_V1 PIF_102 NETL_010_V1 NETL_010_V2
-## X1.6.Anhydro.beta.D.glucose        70.81   25.28       34.47       18.54
-## X1.Methylnicotinamide              75.94  101.49       12.81        8.41
-## X2.Aminobutyrate                   22.65    8.33        3.78        3.78
-## X2.Hydroxyisobutyrate              60.95   59.15        8.33        4.85
-## X2.Oxoglutarate                   230.44   88.23       14.30        8.08
-## X3.Aminoisobutyrate                53.52   22.65       24.29       22.87
-##                             NETL_001_V1 NETCR_015_V2 NETCR_005_V1 PIF_111
-## X1.6.Anhydro.beta.D.glucose       37.34        33.78        22.42  146.94
-## X1.Methylnicotinamide             55.15        53.52        55.15   10.07
-## X2.Aminobutyrate                   7.39        18.17        20.70    6.30
-## X2.Hydroxyisobutyrate             36.23        46.53        38.47   27.94
-## X2.Oxoglutarate                   75.94        81.45       164.02   24.05
-## X3.Aminoisobutyrate                9.87        44.70       206.44   14.88
-##                             PIF_171 NETCR_008_V1 NETCR_008_V2 NETL_017_V1
-## X1.6.Anhydro.beta.D.glucose   64.07        32.46       113.30       22.20
-## X1.Methylnicotinamide          6.42        14.01        43.38       20.70
-## X2.Aminobutyrate              28.79         2.97         4.66        7.85
-## X2.Hydroxyisobutyrate         18.92         5.16        27.11       19.69
-## X2.Oxoglutarate               85.63         8.08        22.42       38.47
-## X3.Aminoisobutyrate           31.82         5.99        27.11        9.30
-##                             NETL_017_V2 NETL_002_V1 NETL_002_V2 PIF_190
-## X1.6.Anhydro.beta.D.glucose       46.53      192.48      528.48   28.79
-## X1.Methylnicotinamide              9.78      108.85      225.88    9.21
-## X2.Aminobutyrate                   3.10        7.77       13.46    5.53
-## X2.Hydroxyisobutyrate              9.30       46.06       93.69   17.64
-## X2.Oxoglutarate                   10.59       55.15      230.44   14.44
-## X3.Aminoisobutyrate               13.20        7.03       10.80   15.49
-##                             NETCR_009_V1 NETCR_009_V2 NETL_007_V1 PIF_112
-## X1.6.Anhydro.beta.D.glucose       181.27        47.47       15.96   22.87
-## X1.Methylnicotinamide              48.42         7.69       16.12   10.38
-## X2.Aminobutyrate                    8.94         4.06        1.93    1.28
-## X2.Hydroxyisobutyrate              51.94         9.30       15.80    5.58
-## X2.Oxoglutarate                   982.40        65.37       25.28    8.50
-## X3.Aminoisobutyrate               198.34        50.40       13.46   13.74
-##                             NETCR_019_V2 NETL_012_V1 NETL_012_V2 NETL_003_V1
-## X1.6.Anhydro.beta.D.glucose        35.16       16.95        9.39       37.71
-## X1.Methylnicotinamide              52.46       15.80       14.01       18.17
-## X2.Aminobutyrate                   13.87       10.49        5.16       26.05
-## X2.Hydroxyisobutyrate              44.26       22.42       23.57       15.03
-## X2.Oxoglutarate                    99.48       62.80       46.99       23.34
-## X3.Aminoisobutyrate               208.51       10.91       13.33       33.45
-##                             NETL_003_V2
-## X1.6.Anhydro.beta.D.glucose       38.47
-## X1.Methylnicotinamide             12.55
-## X2.Aminobutyrate                  15.03
-## X2.Hydroxyisobutyrate             12.55
-## X2.Oxoglutarate                   22.20
-## X3.Aminoisobutyrate               21.33</code></pre>
-<p>Vamos a realizar un ANOVA sobre nuestros datos para determinar si
-existen diferencias significativas en las características estudiadas
-entre el grupo control y el grupo enfermo. Vamos a emplear el dataset
-original, en lugar del contenedor generado, ya que disponemos de todos
-los datos.</p>
-<pre class="r"><code>table(data$Muscle.loss)</code></pre>
-<pre><code>## 
-## cachexic  control 
-##       47       30</code></pre>
-<pre class="r"><code>ANOVA_result &lt;- list()
-
-# Realizar ANOVA para cada característica
-for (col in names(data)[-1]) {
-  anova_mod &lt;- aov(data[[col]] ~ Muscle.loss, data = data)
-  ANOVA_result[[col]] &lt;- summary(anova_mod)
-}
-
-# p-valor &lt; 0.05 = Valores sigmificativos, es decir, que difieren entre ambos grupos de datos
-significativos &lt;- list()
-
-# Filtrar por p-value &lt; 0.05
-for (p in names(ANOVA_result)) {
-  # Extraer el valor p del resumen del ANOVA
-  p_value &lt;- ANOVA_result[[p]][[1]][[&quot;Pr(&gt;F)&quot;]][1]
-  
-  # Verificar si el p-value es menor a 0.05
-  if (!is.na(p_value) &amp;&amp; p_value &lt; 0.05) {
-    significativos[[p]] &lt;- ANOVA_result[[p]]
-  }
-}
-
-# Tamaño
-significativos</code></pre>
-<pre><code>## $X2.Aminobutyrate
-##             Df Sum Sq Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1   3662    3662   5.058 0.0274 *
-## Residuals   75  54293     724                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $X2.Hydroxyisobutyrate
-##             Df Sum Sq Mean Sq F value  Pr(&gt;F)   
-## Muscle.loss  1   4324    4324   8.253 0.00529 **
-## Residuals   75  39295     524                   
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $X3.Hydroxybutyrate
-##             Df Sum Sq Mean Sq F value  Pr(&gt;F)   
-## Muscle.loss  1   6865    6865   11.37 0.00119 **
-## Residuals   75  45300     604                   
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $X3.Hydroxyisovalerate
-##             Df Sum Sq Mean Sq F value  Pr(&gt;F)   
-## Muscle.loss  1   4283    4283   7.468 0.00783 **
-## Residuals   75  43012     573                   
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $X3.Indoxylsulfate
-##             Df  Sum Sq Mean Sq F value  Pr(&gt;F)   
-## Muscle.loss  1  258360  258360   7.211 0.00892 **
-## Residuals   75 2687195   35829                   
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Acetate
-##             Df Sum Sq Mean Sq F value  Pr(&gt;F)   
-## Muscle.loss  1  45831   45831   7.974 0.00607 **
-## Residuals   75 431041    5747                   
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Adipate
-##             Df Sum Sq Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1  12212   12212   5.059 0.0274 *
-## Residuals   75 181046    2414                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Alanine
-##             Df  Sum Sq Mean Sq F value  Pr(&gt;F)   
-## Muscle.loss  1  661101  661101   11.38 0.00118 **
-## Residuals   75 4358038   58107                   
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Asparagine
-##             Df Sum Sq Mean Sq F value  Pr(&gt;F)   
-## Muscle.loss  1  20725   20725   7.753 0.00679 **
-## Residuals   75 200493    2673                   
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Betaine
-##             Df Sum Sq Mean Sq F value  Pr(&gt;F)   
-## Muscle.loss  1  58007   58007   9.416 0.00299 **
-## Residuals   75 462035    6160                   
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Citrate
-##             Df    Sum Sq  Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1  28435309 28435309   6.496 0.0129 *
-## Residuals   75 328309888  4377465                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Creatinine
-##             Df    Sum Sq   Mean Sq F value   Pr(&gt;F)    
-## Muscle.loss  1 4.768e+08 476841076   13.19 0.000513 ***
-## Residuals   75 2.712e+09  36161105                     
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Dimethylamine
-##             Df  Sum Sq Mean Sq F value   Pr(&gt;F)    
-## Muscle.loss  1 1098238 1098238    13.5 0.000446 ***
-## Residuals   75 6103134   81375                     
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Ethanolamine
-##             Df  Sum Sq Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1  307788  307788   5.118 0.0266 *
-## Residuals   75 4510111   60135                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Formate
-##             Df  Sum Sq Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1  194575  194575   5.912 0.0174 *
-## Residuals   75 2468219   32910                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Fucose
-##             Df Sum Sq Mean Sq F value  Pr(&gt;F)   
-## Muscle.loss  1  47918   47918   8.048 0.00585 **
-## Residuals   75 446523    5954                   
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Glucose
-##             Df    Sum Sq Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1   8623964 8623964   4.702 0.0333 *
-## Residuals   75 137569910 1834265                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Glutamine
-##             Df  Sum Sq Mean Sq F value  Pr(&gt;F)   
-## Muscle.loss  1  862145  862145    11.6 0.00106 **
-## Residuals   75 5572369   74298                   
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Glycine
-##             Df   Sum Sq Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1  4293675 4293675   5.012 0.0281 *
-## Residuals   75 64251986  856693                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Hippurate
-##             Df    Sum Sq  Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1  41834878 41834878    5.37 0.0232 *
-## Residuals   75 584307994  7790773                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Histidine
-##             Df  Sum Sq Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1  618344  618344   6.804  0.011 *
-## Residuals   75 6815737   90876                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Leucine
-##             Df Sum Sq Mean Sq F value  Pr(&gt;F)    
-## Muscle.loss  1   5740    5740   14.62 0.00027 ***
-## Residuals   75  29442     393                    
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Methylamine
-##             Df Sum Sq Mean Sq F value  Pr(&gt;F)   
-## Muscle.loss  1   1779  1778.9   10.31 0.00195 **
-## Residuals   75  12937   172.5                   
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $N.N.Dimethylglycine
-##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
-## Muscle.loss  1   7993    7993   15.87 0.000155 ***
-## Residuals   75  37766     504                     
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Pyroglutamate
-##             Df  Sum Sq Mean Sq F value   Pr(&gt;F)    
-## Muscle.loss  1  417715  417715   13.31 0.000485 ***
-## Residuals   75 2353312   31377                     
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Pyruvate
-##             Df Sum Sq Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1   3744    3744    5.91 0.0174 *
-## Residuals   75  47517     634                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Quinolinate
-##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
-## Muscle.loss  1  36137   36137    16.5 0.000119 ***
-## Residuals   75 164259    2190                     
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Serine
-##             Df  Sum Sq Mean Sq F value  Pr(&gt;F)   
-## Muscle.loss  1  279597  279597   8.947 0.00376 **
-## Residuals   75 2343683   31249                   
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Succinate
-##             Df Sum Sq Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1  45401   45401   6.733 0.0114 *
-## Residuals   75 505708    6743                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Taurine
-##             Df   Sum Sq Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1  2057455 2057455   4.755 0.0323 *
-## Residuals   75 32452028  432694                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Threonine
-##             Df Sum Sq Mean Sq F value  Pr(&gt;F)   
-## Muscle.loss  1  63128   63128   9.222 0.00329 **
-## Residuals   75 513408    6845                   
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Trigonelline
-##             Df   Sum Sq Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1   959869  959869   6.495 0.0129 *
-## Residuals   75 11084041  147787                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Trimethylamine.N.oxide
-##             Df   Sum Sq Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1  3412207 3412207   4.298 0.0416 *
-## Residuals   75 59544091  793921                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Tryptophan
-##             Df Sum Sq Mean Sq F value Pr(&gt;F)   
-## Muscle.loss  1  29286   29286   10.37 0.0019 **
-## Residuals   75 211896    2825                  
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Tyrosine
-##             Df Sum Sq Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1  43480   43480   6.748 0.0113 *
-## Residuals   75 483223    6443                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $Valine
-##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
-## Muscle.loss  1  11860   11860   16.12 0.000139 ***
-## Residuals   75  55167     736                     
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $cis.Aconitate
-##             Df  Sum Sq Mean Sq F value Pr(&gt;F)   
-## Muscle.loss  1  621994  621994   8.873 0.0039 **
-## Residuals   75 5257591   70101                  
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $myo.Inositol
-##             Df  Sum Sq Mean Sq F value  Pr(&gt;F)   
-## Muscle.loss  1  260168  260168   10.04 0.00222 **
-## Residuals   75 1943123   25908                   
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $trans.Aconitate
-##             Df Sum Sq Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1   8079    8079   5.464 0.0221 *
-## Residuals   75 110901    1479                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## $tau.Methylhistidine
-##             Df Sum Sq Mean Sq F value Pr(&gt;F)  
-## Muscle.loss  1  30808   30808   5.468  0.022 *
-## Residuals   75 422598    5635                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p>De las 63 características que se han estudiado, de acuerdo con
-nuestro ANOVA, un total de 40 son significativas, es decir que difieren
-entre grupos. A partir de aquí, podríamos dividir el dataset y extraer
-los datos significativos.</p>
-<pre class="r"><code>features_sig &lt;- names(significativos)
-new_data &lt;- data[, c(&quot;Muscle.loss&quot;, features_sig)]</code></pre>
-</div>
-<div id="exploración-de-perfil-en-github" class="section level3">
-<h3>Exploración de perfil en GitHub</h3>
-<p>Ya que no tenía cuenta en GitHub me he creado una. He creado un
-repositorio con el nombre Sanchez-Martin-Maria-PEC1 con la idea de subir
-los asrchivos que se especifican en el enunciado de la PEC1.</p>
+<div id="creación-del-perfil-de-github" class="section level4">
+<h4>Creación del perfil de GitHub</h4>
+<p>Ya que no tenía cuenta en GitHub me he creado una. Se ha creado un
+repositorio con el nombre <code>Sanchez-Martin-Maria-PEC1</code> con la
+idea de subir los archivos que se especifican en el enunciado de la
+PEC1.</p>
 <p>Guardar el objeto contenedor con los datos y metadatos:</p>
-<pre class="r"><code>save(se, file = &quot;Sanchez-Martin-Maria-PEC1-SummarizedExperiment.Rda&quot;)</code></pre>
-<p>He ido generando los archivos necesarios de acuerdo a lo que se exige
-en el enunciado de la PEC1:</p>
+<pre class="r"><code># save(se, file = &quot;Sanchez-Martin-Maria-PEC1-SummarizedExperiment.Rda&quot;)</code></pre>
+<p>Se han ido generando los archivos necesarios de acuerdo a lo que se
+exige en el enunciado de la PEC1:</p>
 <ul>
 <li><p>Informe: <code>Sanchez-Martin-Maria-PEC1.Rmd</code>,
 <code>Sanchez-Martin-Maria-PEC1.pdf</code>,
@@ -1180,6 +509,121 @@ binario:
 </ul>
 <p>Enlace GitHub: <a href="https://github.com/mariasanchez13/Sanchez-Martin-Maria-PEC1.git" class="uri">https://github.com/mariasanchez13/Sanchez-Martin-Maria-PEC1.git</a></p>
 </div>
+</div>
+</div>
+<div id="resultados" class="section level2">
+<h2>Resultados</h2>
+<p>En una primera exploración del dataset se ha determinado que contiene
+un total de 77 observaciones (muestras) y 64 variables
+(características). De estas 77 muestras, se sabe que 47 pertenecen a
+pacientes con cachexia y 30 a controles, por lo que tendremos dos grupos
+bien diferenciados. En cuanto a las 64 caracteerísticas, sabemos que la
+primera columna son metadatos que indica si se trata de un paciente
+(etiquetado con <code>cachexic</code>) o un individuo del grupo de
+control (etiquetado con <code>cachexic</code>), las otras 63 columnas
+contienen información de niveles de diversos metabolitos como pueden ser
+<code>Acetate</code>, <code>cis.Aconitate</code>,
+<code>N.N.Dimethylglycine</code> o <code>Pyruvate</code>, entre
+otros.</p>
+<p>De acuerdo con el tutorial de uso de
+<code>SummarizedExperiment</code>, los datos de expresión y los
+metadatos deben encontrarse en archivos separados, por lo que a partir
+de este archivo original se han generado dos,
+<code>expressiondata</code> y <code>metadata</code>. Además, se ha de
+tener en cuenta que el número de columnas de datos de expresión debe
+coincidir con el número de filas de metadatos, además, deberían tener el
+mismo nombre, para facilitar la interacción con las mismas.</p>
+<p>Para la utilización del paquete <code>SummarizedExperiment</code>, se
+ha determinado que de acuerdo al léxico, <code>assays</code> será
+<code>expressiondata</code> y <code>colData</code> será
+<code>metadata</code>.</p>
+<p>Una vez generado el contenedor, la información general del mismo
+es:</p>
+<pre class="r"><code>library(SummarizedExperiment)
+se &lt;- SummarizedExperiment(
+  assays = SimpleList(counts = expressiondata),
+  colData = metadata
+)</code></pre>
+<pre class="r"><code>se</code></pre>
+<pre><code>## class: SummarizedExperiment 
+## dim: 63 77 
+## metadata(0):
+## assays(1): counts
+## rownames(63): X1.6.Anhydro.beta.D.glucose X1.Methylnicotinamide ...
+##   pi.Methylhistidine tau.Methylhistidine
+## rowData names(0):
+## colnames(77): PIF_178 PIF_087 ... NETL_003_V1 NETL_003_V2
+## colData names(1): Muscle.loss</code></pre>
+<ul>
+<li><p>class: <code>SummarizedExperiment</code>. Indica la
+clase.</p></li>
+<li><p>dim: 63 77. Indica las dimensoones del experimento.</p></li>
+<li><p>metadata: 0</p></li>
+<li><p>assays: 1 (<code>expressiondata</code>)</p></li>
+</ul>
+<p>Se han empleado otras funciones y expresiones basadas en el tutorial
+de uso de <code>SummarizedExperiment</code> de <code>Bioconductor</code>
+para la exploración específica del dataset, se pueden ver en el archivo
+<code>Sanchez-Martin-Maria-PEC1-RScript.R</code>.</p>
+<p>Una vez se ha resalizado una exploración general del archivo, se ha
+determinado que el volumen de datos es demasiado elevado como para
+realizar una representación visual, por lo que se ha determinado que el
+próximo paso lógico a seguir será un filtrado de los datos, de manera
+que se puedan eliminar algunos.</p>
+<p>Se quiere realizar una comparación en la expresión de diferentes
+metabolitos tanto en pacientes como individuos control para determinar
+la influencia de estos en el padecimiento de la enfermedad.</p>
+<p>Como ya se ha mencionado con anterioridad, se aprecia la existencia
+de dos grupos, los individuos <code>control</code> y los individuos
+<code>cachexic</code>. Por lo que se ha pensado en la realización de un
+ANOVA (Análisis de varianza) para determinar si hay o no diferencias
+significativas entre las medias de ambos grupos.</p>
+<p>Previamente, se debe asegurar que los datos siguen una distribución
+normal, por lo que se realizará una prueba Kolgomorov-Smirnov. De las 63
+características, únicamente 19 siguen una distribución normal, por lo
+que se realizará un test ANOVA sobre estas. De estas 19, 16 de ellas
+presentan un p-value inferior a 0.05, por lo que se catalogarán como
+significativas y por ende, podremos determinar que existen diferencias
+significativas entre las medias los grupos para estos metabolitos. Son:
+<code>X2.Hydroxyisobutyrate</code>, <code>X3.Hydroxybutyrate</code>,
+<code>Citrate</code>, <code>Creatinine</code>,
+<code>Dimethylamine</code>, <code>Ethanolamine</code>,
+<code>Fucose</code>, <code>Leucine</code>,
+<code>N.N.Dimethylglycine</code>, <code>Pyroglutamate</code>,
+<code>Quinolinate</code>, <code>Serine</code>, <code>Threonine</code>,
+<code>Tyrosine</code>, <code>Valine</code> y
+<code>tau.Methylhistidine</code>.</p>
+<p>Se ha realizado un diagrama de cajas y bigotes para la visualización
+de las diferencias entre las medias de ambos grupos.</p>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABOkAAAMPCAMAAAC3xXFRAAABpFBMVEUAAAAAADoAAGYAOjoAOmYAOpAAZpAAZrYzMzM0NDQ1NTU4ODg5OTk6AAA6ADo6AGY6OgA6Ojo6OmY6OpA6ZmY6ZpA6ZrY6kJA6kLY6kNtERERGRkZNTU1NTW5NTY5Nbo5NbqtNjshmAABmADpmAGZmOgBmOjpmOmZmOpBmZgBmZjpmZmZmZrZmkJBmkLZmkNtmtpBmtrZmtttmtv9ra2tuTU1uTW5uTY5ubo5ubqtuq8huq+RxcXGOTU2OTW6OTY6Obk2ObquOjk2Ojo6OyP+QOgCQOjqQOmaQZgCQZjqQZmaQZpCQkDqQkGaQkLaQtpCQtraQttuQtv+Q2/+rbk2rbm6rbo6rjk2ryKur5OSr5P+r7auy87K2ZgC2Zjq2Zma2kDq2kGa2tma2tpC2ttu225C229u22/+2/7a2/9u2///Ijk3I5KvI/8jI///bkDrbkGbbtmbbtpDb25Db27bb29vb2//b/7bb/9vb///kq27k5Kvk/8jk/+Tk///r6+v5zdX/tmb/yI7/09v/25D/27b/5Kv//7b//8j//9v//+T////wl8GLAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAgAElEQVR4nO29jZ8ct32n2UOR24ztFh3R0mXIpiKPxI2zWq9PGlGyjqSlS2ZkO2dlTzuS7R27vd5zZMYzDluUnVBkEjtNt2bYrH/6Ci/12qgqAAWgANT3+Yia6e6q6sIzqF/hrYBJAgAAsTMZ+gQAAMA6iHQAgPhBpAMAxA8iHQAgfhDpAADxg0gHAIgfRDoAQPwg0gEA4geRDgAQP4h0AID4QaQDAMQPIh0AIH4Q6QAA8YNIBwCIH0Q6AED8GIl0ywnlxXvtm20OLz0qvVz/1Un102l9h/WM7bDYOUqSz78+mVzMv2F5ge18vre7/TVbB+o8l4zzPcG+tRNV+rQJJ8oepMpezPfvq8yZmw5sqSPv/u/U2HNvZnsLT99KmtzgxFwL5EjVgzdchjYwGekmF9rzQC1ZywudBpeT/fT/q8ku+R+BXL+VnV1EumVruto/bdzLgbJl9RusRDobbjqwpi69TbAjv8T3Fp6+lTS5wYm5tu+/EHykoy42v6AXWTPqBjeH6Tbne+lum8Odj5LNLyfT2s66l20D7iKdfWXp/+6VvyGaSGdL3fne5KV/SZLf3cyOHF2kc2au7fsHwmCkSwM7uYS+vMlqmUtWEttNL6zVbHLxKDPIP98cpreA7JJ7kG7wa2qQfPpCUbpez6asIsaOXfwNypftivqlF3B2oPTPsZxcuLd1Mvmm9EibH6alRFrizrZLr2Zysveyr0qPw060tCM7MqkZ7nwnT0btvH1Qlr3crX6ltjJnboZSt+RbkBaAdO8v6D5u0uQGR+aKfMS2qKgjB0///err5K2k+sqqVpNlul+S62s147VMUrg43yP/vjHL3kkNZp+XDdJS9cWb06wUXFynyWLyeu65fD8pX7assLFK98oPtDl8bja59EhwMnxTppiWuPdLJ32+91z5ZIurubQjPTKvCOzzZGydty/KNgthhV9HmTM3A6mjpWHKP9NLMIt0LtLkBkfmqLBii6q60oWXXnnVV1a1Gm2n2yXpnLxJ3iCuJlPSaJSWbKePaL2TJyv7PC/Lnu+lNdMvD+kWpIj1+awoH6d7l4rSy6IqNpkUX7ogR1pcelQ+kPhk8k3JuaxnLz2iRaBiu/Tr/qI4WR5a6YkWO7Ijp3ctui9vfKiftx/K0l13/kf9K3WVOXMzkLpK7Txvp3OTJjc4MseOn22xpY4efJoet/iq/JVFrUYjHQ8cCe/6W0xIsxptM6JXA4su+ee5QVaaJp/wqla5Pr+YFOl+UPxeuWxX9A+1WzoQu8tsn0y+KTuX57796yQpb8dOluxdv5qLHfnJ/fOv/m424Z8KztsLZeevfr3UidNTmTM3A6lrinQu0uQGR+ZYPiptUVbHYht5m+xVfWVVqzDSpUb2lwqdIvzUSCBaz2ipa8Xa1sj/uYYlqzGWPs8TxNp5yIWz4n+Kovy6ZMVawuYXpeJdpXmdfAU5YnEgdi1un0y+Kd1gQb7rxXul7XhrPT/Z8tVc2THvbOKfbp+3H8pSvtwTNW3qKHPmZiB1TZHORZrc4M5ceYuqOt4y96jIdMUrq1pFkW5x6eHevkoPZuYivR+UDa7oFdfrsl3PLv1+j23HSsX1r2SXX/rFC1oOb75sV/zy55uyDT6/OSF97jKRrrpjWtT/xt//w8O9vpHOrrKEH8WMMmduBlJXtDZ99uK9WqSznSY3uDNX2qKmzqdId763n/6XrBSqYmWDean3fO/izWzEQ17paS4Vs+JrtZc6rbgf0Ro8bSQoj0usXraryRvkZ3Gg7LKtn0y+ad6L+/sfTPbLtddpwv9yi6y0wr+rsiM70bzxoX7eXijj+zVEOnVlztwMpS7rQSTt87VIZztNbnBnrrRFTV1bpLOq1WSkezCptmTuHJEBrNWG7Orn2RemQWzDWzo/Sitc+S1iyRs3j5LywInSV/LLdnP456wAXhyI2aufTL4p2WCVnhjtiar0SOzyYXuLyXfYsfiJlnakf7hHpEucJ6N+3l4oY/s9yKv8fZU5czOUumJU2C6vveY1cttpcoM7c6UtttQ1RzqrWkW11yWpvQrGlzaSt3Xvl3qvs1ZuPjghuz2uyr3P/CtoqZX2XvPya/4+byPJOq3pYWghujYMdjnhZYtJNmSC7rl1Mvmmpe7t8knxrnbWzJ6dFD/RYkcaELJ96afV8/ZDWWk/I8qcuRlIXTHSf5q10/FREfbT5AZ35kpb1NS1RTqrWoU9EivFr+MGX6Cxf81HJPIBv1M24JQ8a8dvj/zz5Pwm6V2mfH5zcvE3tGGQfJo9PpfeQ4748XdLD7KILlte2M4PlFVO6yeTb1qMHH7pUWk7NnzyKh27+Fl61l+Qk+InWtqRj6v8iNTi2Kfl8/ZEGfuEjsM0osyZm2HUEb784az83CvZ5wsnaXKDO3PlLarqvmiLdDa12p/LRPgQkWlWHQ+46G1qaEdlwlPmzk0HTtRFSezmxO105IdCO10rLgx+eVN6TIzCpoZ2VCc4ZQ7ddBD79WqP2M3FEOnO96Tr2gqbGtpR78uCUubUTQexX6/2iN3cVqQrRtIbSrh9g5vDjtlitDY1tKMOgSlz6qaD2K9Xe8RurrlMB1RQfawEAOASzK5uBOXHSgAALhFFOj44JrBhkUOiPtgaAOASQaTbHO5uDvdRh1UAkQ4Av2lop1vsJiu0Osmj/FgJAMAlDZFuOUUBRQnVx0oAAC4RztpEw5x8T+IfZZDbSn9fk1LsA2XawJwu4zYninSbw91koTBJlDENYSpMNAZbQ5k2MKfLuM2ZGGViTEOYChNEOpfAHNBB2Peq2OtqLAMFmvk0HisZu7IewJwu4zZn4hkJYxoauHb9ms8KE0vKpJLdqENmmyCBOV3GbU48E6fa+BJjGsRce+vOW93+zehwhbFkN+qQ2SZIYE6XcZsTlukmas9IGNMgJoRIZ+Gxkut37ty5bu5w0WAqwzRmJJltgmTc5gLokQgg0ik/VmIs2Y06ZLYJEpjTZdzmAoh0gbTTKT1WYizZjTpktgkSmNNl3OaEtVfF9RaNaQhTYaLxWAmUaQNzuozbnLBMt5hMVDoljGkIUyEBj5U4A+Z0Gbe5htqr0oTZxjSEqZCAx0qcAXO6jNtcYzsdiXWSlTFjGsJUqAOUaQNzuozbXEOkW9Lx/gtM3CQHHitxB8zpMm5z4if8JxOV5ziNaQhTYeLhYyX+KwPOGXeeE/a9Kg6AldJwOVqFBM8eKwlBmS4wV+PJfP7y/SR5enf+yh8afjDGbc7Eeq9SGqKOdL49VhKAMm1grsrZO/eTx99Mnn180PiDM25ziHSDYCzZ41GWAXPbpNHu6Xv3G3/wrcZtzsTK1lIaxhnpaDZ7PKf1i3JNwliy41PWBcxtk5bbzt79Q/L0e8fCH+kWl1OGPsthcTZrU9SRrumxkie0BeX0gPxeqUkYS3awyrSBuTpnt24cJ09eoUFN+INvN25zzp57jTrSNTxWcnrjp2mZ7tknNKtVahLGkh2wMk1gbpumwlxRpiOM25yzWZsij3QNj5WQ0JbWWufzg6RSkxjg/GLBVIYJOrPVOT1AO10Hzc9IvGr20aboI53wsRKSzc7ePiblukpNwliyA1emAcxV4fnq2ce3WW+r4Adn3Oaaa69mpyCKP9IJHyvJb6inB5WahLFkB61MC5ir8Xg+v3GM8XRdtEQ61F7laXqspBTp0E5nBpjTZdzmmiOd+KFXMmKCtDrxkRMUKQ1RR7rGx0pIaCPVi2c/vl+pSRhLdrDKtIE5XcZtrrlHonkKInLpspETDCkNkUe6hsHW2Xi6UvWCYizZwSrTBuZIQ8m+6vOHydjNaYwyIY1NfOQEQ0rDMJFuPaPB53yvOV+snz9qeSlHTCtbO1KmDcwtLj3c298cSo/szxi3OY1IR6pgfOREIj9kYpiBFesZLZquZzYzX1wrWztR1oPRm0tvq+TOKn9bzRi3OWGkW5GrtulBCdp/yEdOsHekNAxVpnudjHFbvu6kTCePsWQHq0yb0ZuLMtLZNydc2Zo4PN9rmF39Sd7YlLXVSWkYKtK98a1HyeaDDy89om7I/+jarPusv3TK3iK/8oyTvZwmSb5l9tMcxpI9HmUq6uI2tyS118brE+bEqM9lcno7/y2ESPfm90+S9dUHhUL2c0YbOkhS09e0zYM38fKX5F+2ZfazyWFcszY5UrYN7b0JeVSYM3O0zqUc6EZuTjnSsTorHzkhb3CwSLe/TAv6u6uSwivFXYH/XLFC7H75Zfq/fMsrcgHM9GMlQ+U6h8pK0NkQgp5lbShzsozbnKj2Wj7iFnyYPx85IW1wuEi3miaL/ZJC8jD+NCkiefoW71LYzRSS20Zpy/xnF4YfKxks1zlUlsNmQwj66c2BzEkzbnP1SJfVwyJ5wj9VeP6th6+dlBXSRF44KSssRaiyQr5l6Wc7kYwycamsBH1GOORZ1lyZo+1RCten/7gwF/msTaTa/osPp0lVIS2xlovFpVHS2cvMcFa2lelelV9LzViyQ1dWInueJNhZ1hyZ0xhJJ28u3st0BJFumZZ3U4Wks2pzuMOq99UGzc1hGqK4x9In2ZbZz2YDnY+VBIQjZdtIlOkIpjJMwJlNs09bJvXxXqbCSLdU69uR0jCcQpJ4UtIlhf43Xj2iPVdEV637eof82K10X2dbroxHMWPJjkjZWQTtdC7MKS8unCGT+ngvU/XxdHoGeymU2Vf2ZP1AKtnxPoNIqT+9SYIZZlmTQH3MMEMm9fE+nh7E2mABRLrWx0q2kUp23Nfr1tOb5sbTXbt+LWJzyoM3M2RSj0jXRs2VElIK/Y90VorBUUc6i880XXvrzlv6oc57c9rIpH5Uka7nZXv5P4T8SfhuJJEuprlMHIFI5xyZ1I8r0qn2SFS5/CcFfJ4HRQFEOnXsPb0Zc6SjNwjUXjUwP8pkjGW69sdKBEglO+5IZ/Hpzbjb6bSRST0iXRs1V2OLdNYeK4k80mkCc7rIpH5ckY6VkOULxzVXY4t0OkglO+rrVbnCnzF6c9pPg8mkflyRbjElnRJLzQl0vYp03vluP6/aWUptpb+v0qmZNhBhpFPaWJ8InwZT2lgT8SiT/CELKWquRhjpzvcUnweQSnbE16vGhPQd56ec+j77Kp1ZX1d16s3BZ7foQgdmZvYbW6QjXWKxRbrLnRv3YTGZiB7vF4yGFShrSpLUVvr7diorOzMtzOrTm1Gbqz0NRp4IPnv72NDMfsNHOlvmBJFuc7hLHqNdRFZ7tRvpWMdEvSdRMLukSFlTkqS20t+3U5nN61UbU6nvs2/3mdk0Vy2DPCF5Kl84ve8Tw6OKdKTFc6owAxEiHYfEukomFM0uKVLWlCSprfT37VRm9Xq12a4etTnBeLqm6V/UZ/YbZuiqC3ORjzJpOIiBRG+xpG1OtRvE9kxEifzCkcPgItcltOaQVsM06rAyGSbqSLcNmQLB0Mx+4yrTqVJz5VmkEz1rayDRVcgEMqK+xO3ZJUXKmpIktZX+voMqIzFusaswIX3p/MZtbound28npmb2GyzSWTe3Pbu6+tMmNVe+RTrBd/YxJuJ8r0GWsEy3pawpSVJb6e87sLL9ZKnSw6/CYHUw6+YE1+fZLbJGX+jtdNbNKZfpHs/npJm9uSNxjJFu8y8NH2zPLilS1iPZjTp8V0Z6vNIwt7RSpovbXBUW6EzN7BevOeVId8q9NnYkhh3pBEupSaxLxx9U33y/vuX27JIiZT2S3ajDd2V05tiFxlTOozdXG3NNih5kQF3g4+kUI526OuF4upbsx5Z7TVoKKNFFOhlWZDTdarvC32s8XSC5zuIKpSJGb87q0yWBmNNQJyzTNQyDJaSXK7mBtHQkejVrU4fC8z1SqCDjHfb5i/WVv85epDlpsZssp0Qq27AF2ngiP95fKud4metMKYtwNQQn5iw/XeKlOSPqGmqvomGwlLO3j0m5rqUj0bsyXXOnDrnaVpcevnpEbhHsxe9mrD+QukvOX/vH107yz1pblNI/g8IMRMaS3ajDd2URrnAFc3bMmVHX2E63NQy2xOlBS0eid5Gu+WZRFIHPqSj+VvrvPLWavkeXZktfdpaVN4eT6aqxICw8LzPJbtThvTL1vgh5dXGb0yVUc2bUNUQ64TDYnPzZE5HBkCLdVZa+BQnq7EVmcI+tqEYWWyMGr7Zflaxps3GsifC8zCS7UYf/yqKbOdeRuQhnbWo3Z0adKNI1DYMlkGrrsx/fb+lIDCnS0VsAqQ3k94PM4Gss5YvXpzK32fP/yn7+r/gjnSll2ozenNWnS3w0Z0adsO+17W7xeD6/cdzWkRhQpCPV+vWVT4k0siR4/uLKCR++v776xQdHvP5v9NI1luxGHb4rG10PolFz1p4u8dGcGXWiuUyahsHKGfQu0rU0dbKumrSqfvHmftanwwzSF7zxU6bvVXGRIWPJbtThu7JII50jc1pPlwRrzog6YZmuYRisnEHfIp3oIJIJk8fKeq/xPm0d7VgJ0Rn0dbVFlE+XiM6gt6kyona6pmGwTdRc9Yh024G9DTWFNiOdnVUQ4811SaxjJURnoO+oAV+fLjFSIHE7l0mvYbC9It3PhPxc+G7IkU6KeOcK64PE5RR5pLNJnzzXa4C/dXPiUSZ9hsH2KJdZjXTdG/cg0tpr58aaxLk+s9LGA1BV1OMybcBMmc6WuYZRJj2GwY4y0sXVIyG/8QDIpD5yc2lm29cYeF1V5GlzujVzjU/4aw+D9bX2ak2hDhJ5IvrrVUh1UrDgZuSQ37gHi0sP2fJ9ilQVIdL1HQY7xkin/Li6RJ6I+3qlLZubw62CSWVSsIBXuOrcuJc6Yq/nKBNEOg1q6fU00jnokZBHIk/4cL1aa1dfz1hNf1G7XKuTgoU3c67oDMyaiz7SOe2RUGx0qtJn1qbLP1dApqun4e+gmbRmVFtNjOWcxhwls03nqVm7XvMlNmtrbVYnBcMKV0KWpPaq0P0lOj9EOkK/jsRxlul6Lb3RQLyRrigD11cYqkwKhhWuxKz0SiJVRYh0fYfBjjHSKSORJ2K+XhsjHSWfFCy8Fa5EZ2DUXB+qihDpYot0opEtmrLMYSznNGHvGUQTkFH+DFG1v2FBegV18ZpLTM3W7Fuks24u/trr1jFNK8yqrvHUXq0rY1ksKYc8RnVSsABXuLJuztRzdN5FOtvmTPRI1NI7tkhH4DcH6SxoLOc04fv1uqCPbZ7v1Yt01UnBghtP5yazmZitGZFOg1p6w4501emtJCela6/wdy6R2yPnNOHyetVSRifOVX9K3fPn1N1kNhPP0YUe6ZTViean6zcMFpGuTucSuT1yThPeRzptbJvzPtJtI1hrs7M0jEjXexhsSJGOTdzHVlJbX/3BZEIePL/w6Qs3L5zwNyUzX1vTZvcSuT1yThPWIp0xZbrYNmfterVm7gmpMQgfK2l5uiSoSGdCnbBHotcwWO8iXXOnDl80jc/QzNZVI7PRz9JQv8heyTmgQ5zEd4juJXIbGGz8qxtl+udn5Jrrs++Q5raeozu98dP0Birsrm7ptd4+0zYGNWdGnbBM16sj0btI13yz4CtxvHaSnL+azdfM190ovdmX7iVye+ScJmyV6dwoa8O2OVslE0PmRM/RkWAmHILY8nSJWqST+sv0W4C+2ZwZdco9Eme3SAEla2XPzrOcUwKKdPmCapsPagZLbxqhdYncHtdcE9YinTtlDVQV+VYysW5O9BwdiXTCx0pani4JqfZqRJ1qpCPeSCGFtbILDAYV6UwVUNhEV220LpHbI+c0MZIyXUDXqxlzwqdLJMp0IZuzU6brGgb7hLRvnh7wVnaBwZAiHV80rajqFwZVG50Wk8apSyWWyDVfMrEV6Qwq08RYZmvA1vVqxlxjpFNupwvHnBl1Lc9INPbApncJ3sqeCJrX1S7b2r4W5jIRhYrs40qfDjO4ObxA1pJMlLvDyD1CPNp6iCVyrT3TZFKZFrbNWWtXN2JO+BwdCWbCx0pani4JyZwRdRrPvRJ9vJVdYLCPhsCf8CexTrIbp5ZszyKdyJlBT/2wba7X9WrfnOg5Oufj6dRKM36YU490T+/e5r9lbXUSWWMEkW5Jl1NbyI3QqSUbkU4e2+Y8j3SNz9F1Y86c+DoVX6Y/8zfStT/hf3Yr74tApMvZHPLRdJIzwNSSbfx6vXb9WvdG3aeGSOehOTPP0SHSEVqGwfJAx1vZt8+zkcEjXffG+igsLyQ6L+PX67W37rzVHepkTs2aMm3smjMV6eI2ZzPS2TKnOsqEjKMjfRG8lb3tPGtypDYKNNIpU0s2Ip0mfabybzqk9sn4bs5cnhtDpBPReUlROVIbabd0Dpif+s9P51Wk8x1TGaYJ/TKd71ST6VOkc0Hjeq8KGMtAYUY6iuKzwrVkm450fdrpfMdUhlHc15PrtQ/m8lwkka51GKyI7mvqj0PVXp3hWaTr0ffqO8bMKWU2X67XPlRT3+MeEU+kaxsGK0DiokKkq1JLtvlIhzoYIl0dU/kmqkjXYxhsH4WjiXRVvGpX951qhkGkk8fYZRpTpOsxDLaPwtFEulqyUaaTx5i50UU6GSTvo6af2nSAKNL1Gwbb49IbbaTr02air9uWC7tUk4lIJ4+pfBNNma7nMNg+ChHpEOm6qCYTkU4eU/kmmkinjJwcfYOeRzoPx9Mh0iHSbWMq38QR6XQuWymkaush1v+1qGUcRDp5jJlDpNPMN+bnMnGBeGXrPlWxPgqDLNPpUEt2n+s1xFzXB5jTReoKlNkIka63Qn2DXmQ+yR6cZLBpmqMrmfTIMIh0witQZqMoaq+UwSJdj33N6HBFLX2IdPKYyjAwp20Oka6/Qv19zehwRS19iHTymMowMKdtDpGuv0L9fc3ocEUtfaiDyWMqwyDSaZtDO10bcls1iJU5/nBsDic7R8uJwpPCgzVtepLr+gBzuhgz12Pf4VKPSNefxTRZz8hMV4vWUNe8NliPZI+iZNK87ksfcz32HVKGPuM2Z2I8nZSGeCMdXWGIBrnWvtdnHx80rffaI9ljKJlUzI38eu2DTOrjvUydPSPRR6Hfk63RSLecJh2RrrLK8MiVqdGyPjPMtaNcGo7XHCJdf/IpXxbTlq3O3v0DWRM8ESwGDlqpmIM6BdRLw/Feps2RTncY7OgUZqFuPWsLdHQ5NXa9JlCmRMXcyK9XNVAaLkCZzhVFySSBMiUq5kZ+vaqB0nABIp0r0E6nC0omuqA0XGAi0knR547i993o/FvZmJzN91v7Xm+X2kxkiFeZGjCnS7U0LEO85rYj3YKPL5Fvp5MiXoXne2yG5mTVPjCn0g8mQ7zKFIE5TaqlYRniNbcV6Ujr+opcuoh00izIopGbQ6WlIyWIWZldYI6B0nDB9sjhffr/KSKdAuvZ5HW+9oZBolZmFZjjoDScI450aQFlajjSRc7CdIEOAGAQYe01oY1PiHTSrCaTb8+Ml+kAAKYQ9EiQZ9VJqQ6RThLeQodiHQDe4myUSbzkfa/rGW4OAPgJIl1vivF0yf9CpAPAS7Z6JOSGwSohGNGjNsintrniziECZbrAnC6RmxPMTyc1DFaF/kn2WqENoEwXmNMlcnOiZyT6DYN9end+4zg5uzWfH/AXZ+/8Tfbi5fvJKRnMSCywDZsOwDY+e/cn6a7k999+9/2X7/M3/VLYHyjTBeZ0GZ05QTtdv2GwZEqsJ6/82/eOSUrZi3+9dZs+a0zlJU/f+6f37uefbQ9r5O+f0n3O2K7p5me30j/CafZK8+T8BMp0gTldxmdO2CPRZ7xEkb6n1BR/K/1HHjUmD+I9nt8mL5tEsPfJhukOfFe+eenNmIAyXWBOl/GZE0S6fsNgyfQJhNN5WoJlLzKFd+dzWmJ+m95Isg3FByD7PPukprD0ZkxAmS4wp8v4zG1Fur7DYHmsv3tQ3BAyhe+xlJ/+7Tejuln0Bsp0gTldxmeuse9Vdxgsqb+fvfNbkvS3j0sv3rmfVd/f/Xca79ln2zL4+0Vdv1DoZwNAb6BMF5jTZXzmmsfT6Q6DZX0yj+fzv3z/IOvUYQrpC976Kdupw3Z99vHL5O+QeNmp0x8o0wXmdBmdOTwjAQCIH0Q6AED8INIBAOIHkQ4AED+IdACA+EGkAwDEDyIdACB+hol0y8nE/FJacQNlusCcLlGZGyLSsSUqVpPdAb47UKBMF5jTJTJzQ0Q6vr7iEgvMSANlusCcLpGZGyDSbQ7zu8T6yo8mFz59/ij97fmj9fMfTui8ApvDyWTq/rw8Bsp0gTldYjM3QKTji2cT1rMptccUzi6cbA6nSfYP5ECZLjCnS2zmBoh0TNlsMtlJre2XFbIXtNS8woKCJaBMF5jTJTZzA5bpaEn4qKSQ/Ew/XJGiMX0BOFCmC8zpEpu5AdvpYlHoACjTBeZ0ic3cEH2vS1bk3VJIi8VXTlY7R0EVi10AZbrAnC6RmRtk5PCCDdS59IjfH3bTG8hOsE2dToAyXWBOl7jMDfOMxIoPvmaFX9Ls+carrPuamAus+9oNUKYLzOkSlTmPnnsNqM7vC1CmC8zpEqo5RLqQgTJdYE6XUM0h0oUMlOkCc7qEas6jSAcAAJZApAMAxA8iHQAgfhDpAADxg0gHAIgfRDoAQPwg0gEA4geRDgAQP4h0AID4QaQDAMQPIh0AIH4Q6QAA8YNIBwCIH0Q6AED8INIBAOLHSKRbTigv3mvfbHNIlhPKWf/VSfXT7ama+YFfuLe9dxVyLMEGbfu0Hs86tpXRia8brMh8k/Rn7rGuLpxVYBSxZ05K2bDZyGSk68oitZTW9LRetvsdnsixQox0FpVNG63IfJP0Z+6xri72SGfB3GgiHU3o5heT/dbNdA1uPpvtdMxzqhHphsWysuJ3E5HOL5yoi5JRmzMY6ZL1jKyF++XNyeTiPXID2SWrC+2e7+2uZpOLR5lB/jlZWWiyyw/wIN3g19Qg+fSFe7UDk8PQvdNveL0DPXMAACAASURBVDDb+U6SHvDFR8XW7FjpBg9vTtJP083JnzL9YvaND74+oW9X9yafpf9+9XX6Wf2bbWNdWbJlpRBRTzb5bn9V1XGijuzLrukH7HDFVyWbH6aS3ky29vceB+byDwQKh81GJst0v6Rr3c5I+Tj9bXN44eR8j/z7xix7J0189nnZIC1VX7w5ZSut0W3LB84dpZGOHGvnv894O1TlWJvDizdZTfd8j/hdkQ/Sb1xmFeDq3uyYeeW49s22sa6siHSZlUJEKdml7/ZVVR0n6vLLdJVtUvoqT0Qo48DcupKfqgqHzUZG2+l26eX1JnmDuJpMlzTsTKaPNr8sLpjs81zP+d7OR8mXh3QLcq/8fJaVj/NNFmQ1XRLp0r0fkC9az8ix8q1ZPY0c9TMSAumavAsWHdO/5D2idZrU96ZnMyXX9/Y328aeMn5gkoOqVgoR5WRnx/ZXlWt1eZWfrd2cinxAqxTZodazlx5xjcOKUMb+dVp8IFQ4ZDYyGul4DkhZkAttQQte53u01p/HqvzzXA8rTbMLjN498k+2I112QF6XzTZi1zTZmpbnVvQvt5u1OPzzr/5uNpkm1b35pc13qX+zbewp24p0uZVcRDnZ2bH9VVXHtrpKpOPbJKWvWs+e+/aviyMF0UjFsH+dFh8IFA6bjUy20z2glwht7VwRg2vakcAvsiW7mEqf52lkzWpEyqp0mZYOXPK/mx0wLbGVtl5WsifdZJUVoVkpecLd5ntnl7D4m21jX1mS1K3kIsq5MDu2v6rqOFC3JSgpf9WC7PTivcFFKGPfXPGBQOGw2chkpCPxqGxwRavjJgwW7XRykY6cyYIXSNJS+Tf+/h8e7vl1+VpXlv1eJLEQ0RTp/FRVx4G69kiXfH6TFv2GFqGMfXOjinR5qfd87+LN9ANWKial1vZSMSvR7gsPXOp7LV2Apa3rkW41eWNvN0mKv1le5m64fOvfbBvryrLf60lcz6qRrlx79VNVHRfqFrU6Vrn2Sl/+/geT/aFFKGPfXOmDbYXDZiOztddqS+bOEYlQaUHhL8QtnVk0P9/beZO2kpNWyo+S5MvDav1/89mMX7L1CzDfelnt7Un//+c7R1mkmz4iHdrbe5e917/ZNpaV8d8rVgoR5WSXeyT8VFXHhbrF5Dv5NkfJeq98qFX6DbQDc2gRytg3V/pApHDIbGS0R6IybIEVHkjv9XOzUjtv/jnZiwd7WpClvde8SLsrOPB2pCttvWQjx/JIl75BDJb7tdsv3/o328a+MhL/K1YKEeVkl0cF+KnKnbrioqtvUx2PwyUNLUIZ65lut/TBtsJhs5HJSPcCjf1rPiJxwRo7p+n1Qsaf5oMJs8+T85ukw5ny+c3Jxd/QEEU+fe7N6oF36IN6gkhXbE2O9UU50rHSN/1GOgTyI1pib7l8a99sG8vKWJatWclF1JOdjxz2UlUde+pKxYvP0oN8kQ17ZcOE80PRkcMvPdra33usZ7rd8gdbCofNRvbnMuEtnY5ZdTzx4jXDKIsCqNMldnORRrovb4byFKeI2DOdRaBOl9jNRRnpzvcCajwREHumswjU6RK7uSgj3eZw8pLr7zRJ7JnOIlCnS+zmMOcwACB+EOkAAPGDSAcAiB9EOgBA/CDS2eHsnftJ8ng+n798P3l6d/7KH5LsBwDAPYh0VnhCIlxyekB+f/bxQfL4m9kPAMAAINLZ4PTGT9My3bNPjsmLp+/dJ0U8/mPoUwNglJiIdH+UQW4r/X0NpMMkJKal1dX5/CA5e/cPydPvHfMf6WeXL18e+vQCBplNl3GbQ6SzA4l0Z28fk3Ldk1doiOM/2MdQpg3M6TJuc4h0dsjrqacHW2W6BMp6AHO6jNucq0h37fq1WBUKKUU6UTsdlGkDc7qM25yjSHftrTtv6Tv0W6EQEtNIffXZj+8/+/g263u9XfS9QlkXpKtaOD4H5nQZtzlEOjtk4+luHAuvVyjr4vH8QDw+B+Y6oFlP8x7x1a99NVZzUpGuYxisRAJHnvm2gLIOzr77/oF4fA7MtUOHcmreI76S1l6/Eqk5mUjXNQxWxkLEDQA6QFk7zz75nx+Lx+fIDNC5fv267RP0FjaUU/ceMe4yXecwWGMawlSoA5S18/g2uZeKxueMvAdRAjrASe8ecf3OnTux3iSEkW45mewvS9OTYxisaYxdc3Fer2n2eiYq0xFgroOsM0znHvGVr+hXXj03J4p0i0sP9/b5GlsUDIM1DZS1QtqE5/PbmnWwMZtLGsp0hO50xdzCKYh053v76X/JqlgTDsNgTQNlXZAynWh8DiJdF2c92ukQ6TAM1izGkh2tsh7j6UZujlyXmveIkUW6ZElqr+d7xepaGAZrGmPJHo+yDJjroMd4upgLJMIeiRVfjzsDw2A7qXfidGAs2QEr0wTmdBm3OTwjYYStTpwOjCU7XGW6wJwu4zaHJ/xNsN202YGxZAerTBuY02Xc5kSRbj0jtdcJLltpEOncAXO6jNucINIpVMIYxjSEqZCw1YkDbIHMpsu4zYlHmagdw5iGMBVS6p04HUCZNjCny7jNCct0iHS2gTLgnHHnOVE7nXxzE8OYhjAV6gBl2kgkLOKnN4EuwtrrBD0SiqATxxnd6Yp5lrU+mEp9mOawYo4J0Injju50IdKJMZX6MM0h0pkAnTju6E4XIp0YU6kP01w90tGRYai9KoJOHHdIJAztdEJMpT5McybKdB6zntF4fb7X/Ejq+vmjlpeSRNSJ40qZLjCny7jNRV57Xc92jugPu5kvpmKwI2XawJwu4zYX+dNg69nrZDjv8nXPMh+UaQNzuozbXORPg61nb3zrUbL54MNLj6gb8j8ayPdJOieTKXuL/MoDe/ZymiT5ltlPc0CZVXUwB3N1In8abD178/snyfrqg0Ih+zmjcyyRpKavaWzns8vxl+RftmX2syH5kXXiuFDWyRO6tnBgcw57Ya4FiYQNNOWQC3ORPw2WJny5n6x2VyWFV4q7Av9J+xN4gM9epv/Lt7yi1t0AZX2Vkalfi1WFVddnHrM5Dlty6CBbjl7W3FDTSLowF/nTYKnC1TRZ7JcUJgtW5l0V5eAlK5HtZgrJbaO0Zf7THFDWSbFaSShrg/lijkPWQ2DL0UubGzDSWTfnrEfisrbAngrPv/XwtZOyQtpVeuGkrLDUEFpWyLcs/Wwiqk4cN8q6SEtxmuszD4Uzc1JT+RNjfDl6TneOGDDSWTcnrL0qTrMmpWGwSJf84sNpUlVIy8DlYvFO0ZGTvcwMZ62Wra2X2504gmVLFJfeGDDSuVDWcb2e3bpxrL0+c+Tm5KbyJ/V9vhx9In2PuH79usRWxnFhzlmPxHCRbpmWd1OFZJ7MzeEOq95XGzQ3h+kFxz2WPsm2zH42G9hS9oS0jlSbmSqtTcaSHayyzuu1KMyprs8cuTm5Ca6pML4cPcwlDnskhot0JPGkpEtqmG+8ekQnzSS6at3XO0e0NJu9pG0EfMvsZyN1Zac3frq1vLDyErkD5joHyrqvV/Hiwp5fr16YIzzJ6w95W924zQnb6RS7f6Q0DBPpXLGV7ciVWS2SVFqbBjlJr2i9Xnl9VXN95pif3iRITeV/ejv/zf9I5wJn89PFHem2eiSyxcCLZqZKa5OxZIerrPV6bV5ceOTXK0ViKn9WZ+XL0fP3xm3O2XOvUUe67U6ctjJdgkhHUFx6IwPmZOA5jd8xGOM2JxXpTHQkRh3ptjtxzoJtp/MdmNNl3OZkxtMZ6UiMOtJtd+KQmFZtZqq0NhlLdrDKtIE51cGbGeM2Jx5Pl165RTHFTEdi1JFuuxNn4PF0Us8vOrdUgT0urD642LI5/zOb8gwcGeM21zCebkHHtmTvmOhIjLq70bcn/OXGultV0slimiwvnCyVr1q75ny/XhON8a4Z4zbXEOmW03L/v4mOxLjLdKoYS7aYACLdORs2rPqM9div10RjvGvGuM2J2ukWNAMu5cp0ideRTmljhxhLtpg+kU5pY33O2RCTmCKd0sY9UHfGMJX6PvsqnVkPR9uIIh0ZM7EojzY20ZEYd6Tz7Qn/Hu10Shvrk2Yy8mDPwvAkMUPiyJxyU0nH+VVPVmajHvsqnVlvVWWkR5n07UgcPNJd7txYn3onTifGkt1n3+5Tu9y1cQ/Sm8M0WXTNyNF+fn1S32ff7jOzaS4+XJiLfDxdwwkYkpez3YnTgbFk99m3+9R8vF5Npb7Pvt1nFqq5wS9TZ5EuKxpH8jRYwwn0MSZiuxOnA2PJ7rNv96nhem3YpvPMbJnTmcpfdH5NxGsu8qfBGk7AQKKrbHXidCCV7MGV2Y10S3tPg0VuThOZ1MdrLv5Id3kLC5lvqxOnAygjg+lIEUU51MGcLuM2JxxPJ3/FUqQ0DKfwP2r4kPmgjHff2BllErU5elvVeVBi3OaEZbrFZKLSJyalIV6FOkAZIp02dGSORqgbt7mG2itp9ZSuV0hpCEShYBbSrolJ4+vEsa6MEGft1YE53CPEnjRWQaSQ61fSpZSGQBRaWNtVm2EeFXamLMYeCRfmEOkSHXUNkW5JZ2iXHNcppcFLhWk43zmiDzjs8xfrK3+dvUhz0mI3WU6JVLahOaCsnbNbdE0r3TmH4zY3vtKwCXXip8HoQaRvG1IafOzUIc9Kry49fPWI3CLYi9/N2ABg6i45f+0fXzvJP2sL+4oFFNvK+j0N5kZZC+SR6rO3j0WTIXp+vToxJzFb8+P5nMwqGdA9oqXv1Yg6Yd+rYrlYSoOPN4uiCHxORfG30n/nqdX0Pbo0W/qys6ysepu1rKznE/5OlLX1ID4hca3H2mDD3SNcmJOBLZMT0j2ipUxnRN0IxtO1ZL6rLPwvSJMke5EZ3GMrqpHF1ojBq+2FE+WmE8vKLEY6U8o6exAbJkOUarzUb+G8fufOHd3FnV2Zk4Av8ur0HmEx0plQJzO7uhF8bF5ntwASpvL7QWbwNZb4xetTmdvsiCKdK2VkDgnRZIiWr9cgzHV39Ke1VtLQ6fIe0Yd2c2bUCWdXVxypI5WFfLxZkGr9+sqnRBpZEjx/ceWEP6+/vvrFB0e8/t+aAT2rvdqrgxlT1hHpnt69nSSiyRCDjXTmMhvz92pbp8XZ28ekXOfyHmGxTGdEXcOcw0pIafCyqZN11Swnk4s397M+HWaQvuCNnzIdiZ71SASgrPXmcHaLtDMF2E7nJLNRurt7Tg9c3iNsPg1mQp2wTBdVpBOdgFr6LCCV7MGV2X1OvaUHkQU64WSIfl+vojMwb47S3VSSd+kIzq+JeM2J2ulUxyRKaRhcISLd1jadpzbUjBxkjARpZwpuPJ3oDCw5ah3sSqqtz358H/eIAsxPZwQrs6sPrgxzDzVt03lmFs3xS7S9gpveK24c4x5RIv5RJvIb6xNZJ478xvpEPp9k58YDIJP6eM0190h4M2TCd4VJdJ048hv3pb0HUYhM6kdgTgOZ1MdrDpHOBN514vi/NhhH/YExmeRHndloR/++/PzWXedXIV5zW5FumbfTSVfIaq6UiEAhwbNOnADWe+VENiOH/MY9WFx6yJYFV0Qm9fGaMz+ebmsIIONPwncdRjqbPRLKjU5SyR4+0g3cgyikqsjX26rVHgm63mas94hweiTGGOkaqE4o4XDhyAAinVQPYtf5eZvZ/I90o7tHCCOdYjtANS2+Zr4BIl1lQonKvBJSyR6+nc7HUSYVLv9JAblnOvWf/HRlbklqr33np7Nwmcps1X1mLiOdajtALb1jjHTC8XTVCSUq49Wlkh1vTaIPVUVju14pEvPTdTK6e4S4nU6tdFzLKZ5FOlFRXFtXA5vD3c3hfr2BszqhRGVeCamjDjevhG1lyk3BJWxntl6RzkVm02bc5uQjnWyjk3eR7mc1LGQ+4ovNqlB+tzqhRGVeCalkD/e0tW1lNNKpNzRl51dS5Nv16iCzcfq2043NnKj2Km4HkG10GmukW06FmS+fUKIyr4RUshHpGs6vpGhs12sBIp0awh4JUTuAdKNT4JGuOr2V7EzXCxrmRL044jnCpZIdSqRTV4ZIJ3KlNq36yCOdsjrpUSbSjU6+NXU6yXxkUYRFfchEdUKJyrwStSziWY8/Ip235goQ6RpfCZGOdNKNTiEpZBP3sZXU1ld/MJnsk98/feHmhRP+Zq/VS6oTSjht2vRb2SgjneHMNqZIZ0Kd2joSMo1O3ils7tThi6bxGZrZumpkNvpZeh0uslddBrUYuTKducGE6kZnriC2SNfS92pEndo6EjKNTt4pbL5Z8JU4Xjshc2rw+Zr5uhulN2XoNz/dKJXpMm5z8d4jWsp0RtRJP/cq3+gUjsJiQbXNBzWDpTcl6Dk/3RiVdUHvo51zDsOcAqGaM6NOfh2JCBudjBVQ/JsUwXtlHTwhYzdFQ5qCvV7dlobPbpH+w2wQbNjmrJXpek5BFJBCvmhaUdUvDKo1nfScn26Myto5vfHTtEzXvTYYzIkhbeikD5ENgg3cnBl1Jla2rqXXN4UtTZ2VPh1mcHN4gawlmah1h0V2c3ChrAMS2kRDmqojjrwb0uSBOcITUgQ+PeCDYIvzCzPPGVEnrL0qPjxcS68S9hWKDqKWvg76LzLkW64THcWYLklIpBMNafL7evXBXEaqjA+CTQK4R1g3Z2EmzrFFOh1q6cP1uoWwTFc/P5hrhnQa8kGwgvPz9jJ1Gekia3QSHUTdUzs9l97wVdnQkU6inW5s16s0T+/e5r/lbXXjNidsp1NsL6il19fLtnNjfWKNdBaVdUFCm2hIk7nrVW3fys7iU/bEHOXsVt4X0RDpxpbnhLXXOBudbCk0sMjQ6JR1Y3883VZvH+Pn4rfDinQ80PFBsKLzG12e82sdiR63aAPp0Cempk3fMZfZTEc6jyDj6EhfBB8EyzBmrkeGHU6JZ5FOJfN5FOl6opZx5A5p+ZSHA5FOF4ORLkBz9UhHJxwerPYaZKQrJuYYop1OLUp6kuv6MExm8+V67YMxc1FEOh0MXraIdLheO4A5XYyZG22kq9JnSOLlnyvgSwUNkc4pMKcLIl0NOrf6RKGJfaDLFmU6XK8wp0A19dqNHo3q/Da3Fek2h/RyPd/TXtm6h0JEOlyvXcCcLn+UQLJnP0BzW5EuW/VF4elXOTn6BhHpcL024KypxJu2kh4Yu0yjiHTFo2Ciha7EyMnRN4hIh0hXYM6cfu1jaAf2kBzDFOA9QjDKhP+me9k2BTGpjcKMdL3nMulT4R/b9QpzukhdgTIbRVGmGzjS6Wdcg04cMJQyT3JdH8yZG3VpuI+5KJ6RQKRzgkFluF5hTg5j5hDpeisMsvaqw0DKcL3CnAFzkdRe+zY69VGISGdXmS+5rg/mzIVYMumDMXNRlOl0kJNj12Bgmc+gMkQ6TXM99h3agR7jNudXpAtSoQ7mlKndHBDpjOw7tAM9xm0Okc4ZzUvkQpkCMqmX8wtzeqkP0xwinSsq6zNDmQrNcw43pQzmBIzbnG6kUy6g9FEos68pIdaorPsCZQpU7hHWr9eYzLm9R/htTjPSqRdQ4lUoSWV95qFPJiha1gZDZmsF94gCzUiHAooylfWZoUyByj0CNwkFcI8o0Ix0KKAoU1mf2VjOCTPXqVG5R4z8elUD94gCzUiHAooyKAbrUrlHINIpgHtEQe8ynSx97ihR3I2q6zPLMHplnGodTAaYY+AyLTDRTidFvAplqfSDyQBlDNwjdMFlWqDd94rMZx0o4+AeoQku0wIT4+mkiFehNaBMF5jj4DLNMb8KIgAA+AYiHQAgfhDpAADxg0gHAIgfRDoAQPy4iHSCET1qg3xqmyvuHCJQpgvM6RK5uYEiXa8jeKbQBlCmC8zpErk585Hu6d35jePk7NZ8fsBfnL3zN9mLl+8np2QwI7HANmw6ANv47N2fpLuS33/73fdfvs/f9Ethf6BMF5jTZXTmjEc6MiXWk1f+7XvHJKXsxb/euk2fNabykqfv/dN79/PPtoc18vdP6T5nbNd087Nb6R/hNHtl+qwHBcp0gTldxmfOeKQr0veUmuJvpf/Io8bkQbzH89vkZZMI9j7ZMN2B78o3L70ZE1CmC8zpMj5z5iPduyz+n87TEix7kSm8O5/TEvPb9EaSbSg+ANnn2Sc1haU3YwLKdIE5XcZnzlKZ7undg+KGkCl8j6X89G+/GdXNojdQpgvM6TI+c1ba6c7e+S1J+tvHpRfv3M+q7+/+O4337LNtGfz9oq5fKPSzAaA3UKYLzOkyPnO2+l4fz+d/+f5B1qnDFNIXvPVTtlOH7frs45fJ3yHxslOnP1CmC8zpMjpzeEYCABA/iHQAgPhBpAMAxA8iHQAgfhDpAADxg0gHAIgfRDoAQPwME+mWk5T9Qb46VKBMF5jTJSpzQ0S6zeGFkyRZTXYH+O5AgTJdYE6XyMwNEelWxGB6x7j0aIAvDxMo0wXmdInM3ACRbnOY3yXWV340ufDp80fpb88frZ//cDIhWjeHk8nU/Xl5DJTpAnO6xGZugEh3vpdX/dezKbXHFM4unGwOp0n2D+RAmS4wp0ts5gaIdEzZbDLZSa3tlxWyF7TUzIvOgAJlusCcLrGZG7BMR0vCRyWF5Gf64YoUjekLwIEyXWBOl9jMDdhOF4tCB0CZLjCnS2zmhuh7XbIi75ZCWiy+crLaOQqqWOwCKNMF5nSJzNwgI4cXbKDOpUf8/rCb3kB2gm3qdAKU6QJzusRlbphnJFZ88DUr/JJmzzdeZd3XxFxg3ddugDJdYE6XqMx59NxrQHV+X4AyXWBOl1DNIdKFDJTpAnO6hGoOkS5koEwXmNMlVHMeRToAALAEIh0AIH4Q6QAA8YNIBwCIH0Q6AED8INIBAOIHkQ4AED+IdACA+EGkAwDEDyIdACB+EOkAAPGDSAcAiB9EOgBA/CDSAQDiB5EOABA/RiLdckJ58V77ZptDspxQzvqvTqqfbk/VvJyw9YnIHPbN71BeuLf9DVXI9wk2qL4lPkLrcbWwqIxy8SOp02g/fhOSm1nCmrr03f/99cnkuf9W/Vs3/fHJ+40ZY1hFDdgzJxQnOthwmIx0k46FgmqJXl6QuGx36LR/5bi2/Q5nv0Mr+T7fIp0NZYWObtqP34TkZpawpi758iY78s5RdVONSDesogasmSNLShAEMiKLdNTF5hcdV5fWZUt3qcS1+jvsyz+b7XTMhdoj0pnHnjK2yQNRrlM9fhMDRzpb6tLrlRR3vvxhVygQfoHoJD3DmrnV5BIRdyh3ex0Gg5EuWc9I9CE3xov3eD1zNdlNY9JqNrl4lBnkn9PbQBatHqQb/JoaJJ++cK848I/oNuW4tv0O+0OkX0W/IT2LB7Od7yTpl774qDgi+750g4c3J+mn6eb77DDsrNIz2PlvdF23S4/yj9iJHeW37199ne5aP0vPlDEdiwsnpSROl5ML9/LvqSaXfUe6TXb8B2lNhKSzbpK/n23WX4Ie9tRlWyx5Vkr4Un/bf3zylZm78meeKGrAnrmsolX+iOW6Xxu/dDQxWab7JV3rdsbL/5vDCyfne+TfN2bZO6nB7POyQVqqvnhzylZaK9Uelhd+c7hzVI1r2++wSzvLeOsZ+b6d/06OVDpiFuku3mRVO/ZXWZEP0rPi5XqWrfOP2DJw/MyzEvr+1ll6piyPdKUkPjdLy3j591STW490yyydNZPZ+3wzAxL8UkcOwX473ytZqf/xS1+ZRbr8M18UNWAt063yWFj6iOW6L4xfOpoYbafbpTWAN8kbxNUkjekkpEymjza/zC+r/PNlkbF2PiJFX7LFTvrp57OsfJxusp6lm1bi2vY77JcFWXGXRLr0Gx6wjEa+Lz8iq72Sb/6MXLh03d4Fy6zlM0g/Lz5K/yQP+A0+3XVKQuL2WfqmjPx4UE1i9XuqyS2uaa4oLf2l7qZJ3WT2Pt+svwS/1LEbA4VnpUqky//42SFLkS7/zBNFDVjLdMkvJjvf+H//hfxWfJTlOtOXjiZGI91Lj9ifOc0qJGovaFGA3CCTUhzKP88NstI0u7Zo/Mo/Ib+Q0nU1rm2/Qyl/A/1SXpfNd2OX8QnP0yv6193l9dXsDNj9jH/Ed87+XNmu9bP0Sxk/ML1v50kknxbHqSa3FulS/vlXfzebTJOqyeJ9upkJCXrYUtce6Yo/fnbIItLlecoXRQ1Yy3RJ8vsfkuL/m0npI+bF/KWjicl2ugf06qCNkqTql/7O6pnU2ZJljdLneXJZexLJVKvSZZodmBSsqnFt+x1K/jfazb50QWJYfsSiR4Je1WSTFS+rs3aGLFvnH/GTTWoBoX6WfiljL2lTSDmJSel7qsmtRzpWwZjwbJmbLN6nm5mQoIctdeVIt117zV4Vhyy102X+fFHUgLVMR9l8/p/TO2jxUebF9KWjiclIR2JN2eCK1sz7RjpSdXpYjWvb7yTldjq5SEfOdsHLK7VIl31kP9JZUpZRSqJ0pEtrMd/4+394uFePdMX7fkQ64+rK7XTTRCfSeaOoAWuZjsOqR6OJdHmp93zv4k165bBkdpWKWeF2X3Dg5eT/qMW17Xcqfa+l67N0xHqkW03e2NvN/jyV2mv2Ua32WsvsPivjlJLYXHtlzXnn2fXJDpjXUWom80YoExL0sKZuxdqVLt6jd4LcSv2Pv117rWYMDxQ1YMscr/iWQ2iSJKJIN6ASs7XXaksmu6TSG91fiFs6s8B+vpdW8De8pfMjMi6n3E7HxiVW45rgnc9mPJBVr8/SEZd5PY5Fus3hn+/wPvVaj0TxEanC7tUzdP0sPVTGKSWxuUciWUy+w45Fj5/m8UdkLMD2PSN7n5vsL0EPa+rYeLovf8DyVm6l/sff7pEoRUE/FDVgzdyCDkTcPJiVLzhRpBtQidEeiUonPCsykN7r58hbWYGqMtSBRytapqW917x0WyuvrWdszM++8J3Sl29HutIRl2w8XR7p0jeyJtPqsIv8I77zfr2SVztLzS3hFAAAIABJREFUH5XlX5MnMUkaRpmUjsUUsQ+37xnZ++w0DEjQw5q65Jw/IzFh5Xq+Wf2Pvz3KpBQF/VDUgDVzaZScZJvnH4ki3YBKTEa6F2jsX/MRiQvW2DlNLxUy9PReXonKhq+m+WrKCr3J5zcnF39Dww/59Lk38wPzy3ZZj3Tld5hj+jCfINIVRyTf90U50rESOjsrMpT2/8ybZ7I6Cn37za0/V+0svVTGKCexdJxacj9Lv+wL2ktDjk+HjH5EKyIVk/n7/DT6S9DDmroke3zzl3SXzIroj18bOZx95ouiBuyZo+LYNZh/JIx0wymxP5dJqUvLM1a1h1eK/tytj9xiTllbOkrJjQcz6r78fx4ZOEpY+HudmmHEke7Lm5ey/Lye/adHyWaRh4XSR0NgTFlDOurJjQhvc5v3xG5OGOnSUu7+0tS17qlB0rSQl2l4AwtPcuWjITCkrDEd1eRGhae5LQBiNyeKdItLD/f2xRN4aeCpwfRqf6n06oeTyc5Lj0QfDYAhZc3pqCQ3KjzNbQEQuzlBpDvf20//S1bedI4DAEA/EOkAAPEjqr0uSe01yp45AMA4EfZIrLwa7wgAAD3B2mAAgPhRiXRn79xP/3drPj9Iksfz+fzl+9ZOCwAADCKKdHyWrXqPxBMS2p5+7zg5e/s4OT1wcnoAAGAAQaRrGEl3euOnaZnuyTfJrwfPPjkuPvmjDHJb6e9ryY8loEwbmNNl3ObEo0zE29Laa0parnt6d04rsUly+fJlaycXL8ZyTpi5rg8wp8u4zQnLdO2R7tnHt2kFNi/XGdMQpkIdoEwbmGtC0I6elkhe+UP2+bjNidrpmsYMs0j39O5t/jprq5OxcO36tVgV6gBl2sBcA4J29GcfHySPv5ltMG5zwtrrRNgjkd0z8r4IhUh37a07b+k79FuhDlCmDcyJEbWjP33vft7mNHZzqqNMeKB7kpaJn/2YK5RIYMwKdYAybWCuie129LN3/0BLebQ5XaI9/fqdO3eu2z3JwVCNdKT+TxymP29k3a8SWWOsma8HMee6PiCzNbHdjk4KJCzSEcZtrh7p6OP9DbXXJmQsRNwAoAOUaQNzTWy3oxdlOsK4zZl4GkzGQsQKdTCW7PEoy4C5Jrbb0VXb6WI25yjSxVws1sFYssejDHSx3Y5OKrJKfa8R5zlRpNsc7jY9KCFEIoGIdFWMJXs8yjJgrglBOzrG0+UIZ1dnK+dJhzqJBEYf6RSX3jCW7ICVaQJzuozbXPPTYGbnHL5+Pep+RNWlN4zlnDBzXR9gTpdxmzMR6YxpCFNhojEhPZRpA3O6jNuccHZ1csEqzK5uTEOYChNEOpfAnC7jNmdidnVjGsJUSFBdegPKtIE5oIOr8XSxZz7cHFwBc7qM2xwi3SBAmTYwp8u4zQl7JHaOlI5hTEOYCpPGTpyzW3StDT6oqTy2Ccq0gTldxm1OWKZbTCbyQ8Nw2TZFuqd3D5LHr/yBTxJWmSsMyrSBOV3Gba6h9kqe8t9qdaJP0KGAssVyklEdT8efr+YPH1aeQRy7sh7AnC7jNtfYTkdiXbWIQuc0RQFFhHjpDR7pqj8SLL3Rj9FnNm3Gba4h0i1p+WRRrsOyOU1RQJGH1l5vZJOEVeYKgzLlB+gyYE6XcZsTP+Gf5kHyS63dic6VgAKKCPESuWe35v/XJ9tlugSRLlF/gC4D5poQtC7hCf8cYd9ry4o5KKCI2Bzubg73RXXYtPCLYrAI5cdKMkZvrglB65LyijkRm1NeRwIFFAHkml3sJqtqXYwIotntdukHA8oQ6Qwjal3CTJwF27Or5x2JwrXBAiugrGc0Fed7ze1B6+ePWl7KQa7Z5XTrsn0yb6pJQFn7A3R81dKw6mCuzDWxXRJRXTFnKFyYUy3TBVZAWc/oKOj1zHLmW9AwJ9++DmWtD9DxVUsDq4M5M9fAduuS6oo5MZtTjXTBFVBeJ9fS8nXLmY9M07yYyD9bAmWt8FVLA6uDDW2urUxHGLe5lpWt6wNhGzGmwYbCN771KNl88OGlR9QN+R/tJ91nXcxT9hb5ldc8s5fTJMm3zH6aA8o6Z0EMsQ42bGbbbl0K5x5h31zb/HSyQwCMabCh8M3vnyTrqw8KheznjA5wIJdb+pomlFc9+UvyL9sy+yklQw6ZVA+0nJojZV2RjrSPBFcHGzazbbcuhbJijgtzrXMOS3aMGdNgQ+H+cj9Z7a5KCq8UdwX+c8VC+375Zfq/fMsrnRrE4+l6KRtq6Q0nypoeoMuhq5Zq18Eua3vz3lwL4Y6nc2HOVaQbrICyv5omi/2SQjJ/wTQpShPpW/y6280UkttGacv8ZyPKA2BljA0X6VwoEz9Al8EW89Ougw0W6VyY08ZU6sM01zq7umRfokQCB7xsz7/18LWTskLaElmEcaKwlM6yQr5l6WcD7ZctlKnCVy3VroMNFukGN9eGqdSHaa55dvX9ZKk4T10L1+/cuTPE4mCk2v6LD6dJVSENTeVicSmh2cvMcBbEWoPZ5tB8pBuwGOxCWWuFP1u1VLcONlikc2JOF1OpD9OcozmHByygJMsJfXqBFFI3hzusel9t0NwcprcH7rH0SbZl9rNFgepQf2PJDlZZ8wN0BtQNF+lcZDZdTKU+THOuZlcfsIBCEk9KuqQQ8carR7TESnTVuq93juiouOwlbSPgW2Y/m1HtkfAYR8rED9BJIJNhhot0LjKbLqZSH6Y5lafB+hiM+IG6hA0cVgLKGh6g60Ym9cNEOmdoznc1brBijgls9EhErkz5AboMmdTHHekw35UOiHQmsNIjEbcy5QfoMmRSH3WkwywwWmBtMCOojveUSnbU16s2ozeHSKeF6tpgWf8/+fmy/7M2OSJr3TTbtBn19aoNzLXOd9WCqdSHaU5lbbAM8hzi6UHx2piGMBXqIJXsuK9X3e5qy+akBglYESJPy3xXbcgkP97LVGFtsAzyCOKzT46LN4xpCFOhDlLJjjrSabSoM+yakxv4aVaFK2TSH+9lKr82WA55MOfpXVqHTbBiDsPCE/6RRzrtxwDsmgs90tValwJ5wt8FKmuDMeisEmdvl8p1xjSYV6i0sT7KA/6lkj1MpFPaWB/l7uoMmdQPE+mUNu5B1221aF0KZbZmpY01UVkbjPEkv0lkbXVSGqK+bJUH/EslO2plGn2HDJnUD9NOp7SxPl31/lLrUigzcSptrIn6eLrT2/lviHQc5QH/UsmOXJlid3XH+VWI3Fx7abjUuhTKbM0uzIkiXWvpmN0tSMHu2Y9VRpkMnvkud27cA/GA/2cfz28c6y+9Mbiy8hkYV6aLTOqjNtdR7y+3LoUyW3N5C1vmBJGuvXTMxT2e04t46zwbGTzzWY104gH/aaE3zWuiFa6kkj24MkS6pm06z8ymufaqQ7l1SXm25oEm4ihv4TDS2XmIc/DMZzXSCSGtJIl45lypZA+uzFquo8P8NWuvMgxTUXNhLums95dbl1Tb6a599WtfHWJytfIWTst0UUW6y1tYazqp3WzP3v0JKfiKVriSOupg16sLZdqMPrO1U2ldUp2t+Stpme4rkZoTtdNZmVZyuMz3HzXcRbpbtE1YtMIVlGkDc61UW5cUx9MNGelsm3M2P13Ema9poauWVYZHrkwnl5XOb9Tm9Ov93ekasPbqPNLpIKUhkMwnmJREYp4ScdPm0/+bxrbw2ulcKNMG5nSRSNhwPRKKkU5dXesqiG07qjJco1PfzKfPKa29ila4kso54V6vNhm9OatPlww2yqR/pOvARKST0uBl5ksrAjtHdPzgPn+xvvLX2Ys0/YvdZDklUtmGjTRUKJ7epTNbBTeezoUyXum3MyNH1OasPjHsZ6QzoW4r0nWurq5n0MvuMHJ3XF16+OoRuUWwF7+bsYe6qLvk/LV/fO0k/6zrUa/zV6VnMIWyYlVhRWBOdwkJU6l3bc6MuvjH07XcLIoi8DkVxd9K/5Gglb5Hl2ZLX0qWlWN57tWFMu02EpizORJxGNrNmVE36h6J9VUWmRYk27AXmcE9tqIaWWyNGLwqFcJGUOE3pmx8kc5wZlPHVOpdmzOjThjpFFdZk9LgZeajtwByzeX3g8zga+wCXLw+VSjTiefzgzIhcdZe3WU2dUyl3rU5M+pEkU51lTUpDT5mPlKtX1/5lEgjS4LnL66c8DmY1le/+OCI1//bLPIKhfxKQ1A2uh4Js+Z01ns1lXrX5syoE7fTqa09JKVhsCnD2po6WVdNmnEu3tzP+nSYQfqCN37KdCQqYluZvdbhwZSpqIvbXHzrvXaYM6JOOdIJpm2W0jD4NLDun/BvQSrh8T7h3weZ1EdtLsJVEMtbOHzCv32VNcG0zVIa4o108T1AJzoDY7oyPF0bzH9ziHRaCHskWlZZE03bLKUh3king1TCh58j3Op8kl6uDeb79UpoLYlU61yBrJhT3sJppGtBNG2z1I49nga7fv267q5Kvn1DX9n1O3fu6DpzpMzTtcFMXa+dG/ehbb3XSp0LK+YUqEY60bTNUhqiznxFBVayoCKV7MGLwd0b69P19CatMXSWTLbbsduQcud9ZmulWufCijkFyutIEGrTNktpiDrS5YPDZOtkUsmOOtJ1zRFOqmDdJZOtsQmMPwnflfLp/9pgrVTrXFgxp0B5HQlCbdpmmQwUd6QrBvxLthNLJXv4drrOjfVpf6bp9MZP09zVXTIxHun8v0csd46oPHHttVrnCnHFnM6NNVF97lU0bXP19MZYofAu0vmvrAsS2rpLJpf/pIBMocb7Fs5VGuhIWaTt6ZK8zqW8Ys64Il17C4pg2ubq6ZmvUASwYk7+aJPk0HWpZA8f6QYcT0ciXXfJxNsynS1zZBG6ZD3bb53RJK9zhdhO57Lvtd86EhYincxWnadmd5QJ7Q7bp1ULGYwlu1GHzDadp2Yr10nMES4s022p87adzqI5Vq5ruEqrdS7VFXPGFulUx3RW0zLOSKeIsWQ36pDZpvPUBi7TDdBO57s5Guloca75GaaG1dQDGZ/jMNLRArIKNVeeRbrWB+qGwliyG3WEroyEtu6SiW+Rzro50rTEugzlJ84pnV8n8eY58zNxehfpflbDymWrODGHsWQ36vBdmUztVWI8nW+Rzrq5tDxHm+lWE+WR1zKpjzfPmV/ZepSRTnWytVr6POuudnNzIChMSJ9RNTe+zLYgd9TNocY8MaZS30DPKYcGiHQ9F3sy3vHf57EodYXVxEuq6LnIUOAlEy1lHPkJ6UvnZ9Wcy0jXx5w6plIvpmevtWqkU1YnrL32mphjjJmvIdI9mcutDTbmSNdvRo4xZjZtTKVeTICRTpmaq4AyH5u4j62ktr76g8mEDH648OkLNy+c8DclM5+w9kqamoqHmVomugop0hlTxujZrj7KzGaTwWaVaI10JtSNINI1d+rwRdP4DM1sXTUyGz1p8V1kr+QcNPVIFIMkWh6gG6My5QnpS+dXSqb5Fk7vzWljKvUN2Jsa3Ii6eqSTGNPZYdC7y7b5ZsFX4njthLSM8/ma+bobpTd7kZbiRM80VTcKqGnTgbLu8yvlDN8iXTDmeqS+0Yolc2bUjaBM15L58gXVNh/UDJbelKCpu/rs1o1j4TNNUKYNzBkx1yP1jVYsmTOjbtyRztRttnkIYlGYa5noaozK2IM4u6T2ocbozWljKvWNViyZs1amo49wqoxLrLkKp0LBF00rqvqFQcWmk+bHrcVPW9fSF871akrZgjbQpeFuNH2v5jKbLtVkmr9MrUU6I+q2It3m8AJbRrbh2j27RWb6y6ar3zYYUqSr9ukwg2n6yVqSiVJ3mLhpk9dXRc801dIXzvVqSFk2uGQ967eW3/jM9cC2OXsjm0yo24p0Wemk4elXUv8is/2x6eoFBv3LfILo2mXFEM1PW9fS59vNwbayLHNtDieRjTIZLrN1Y9tcWM+9Fm3r4grZE1IqOT3g09Xn52lXYa/MJzpIf289qaXPs0gnOorR5Gftmusr/19ctVfr5jqp1rnCeWLYujnBKBP+W/Po9bRcx6erTwIYMiEwaOFxdcVxYdU//+iuV5lc1sS4zXVRrXM5XYHDc3MakY40OPHp6rfP02OFnRv3YTFRqoeNXFnRNLKMq53OurkuqnUutzP7+W1OPdI9vXub/5a11dXSOzaFnOZVTDrPa3zKssylserryM1JUNS5XK7AYajqZc2ccqQ7u5X3RQQQ6ZxCYp1kZWz0yrJRJqqj6Wr0uV7VWkc9XkOwRqnO5XIFDt/z3Haky9ZoFl+0PNDx6erZe7X0jk0hZ0mXtZZ8Yh3KaEZTbqRLDI4K2xrXwPi5+O3KzuZ1mKNc52pbgaOHuSDznOozEqRPh5SL+QAKSi29PS7bHvpNi1Fjc8jHWmutgjjGSKeNqdRHGukqda62djpEOnVq6e0T6VQyn0eR7nwvnuXUfMdU6uOMdNU6l9sVOPzOc82RTnsC3R43i1AjnTK1ZI8t1/XBVOrjjHS1OpfT8XR+5znzZboeGkKNdAu9FqcctKsrMExmCyXStVFNfZ9Ip1+aGS71iHT9Ib0QS7VQV0t2j1w37uvVWWaLzly/SBegOUS63tAH6BQXVKslG5FOnmEyW3TmRh/pukaZaCNVb7r8cwV8qYnRIYiKy4HXMg4inTxSQUxqoxDrYH0wlueiiHQ5C90B/70yn8pl60uZDpHOKeYy29giXQW1xNd3DrBE0hDplB5Zl8lWNjJfZVdDPjQwEOn0k41Ip5/ZYE7TXEQ9Eqsej6v3UdjjkjfkQ4P+kc6dMk9yXR/MmUOk0zQXT6RbTJRmmJCTI7WRSubzJ9KpN20aVBZiruuDOXOIdJrmYmmn2xyqLCKRjD7S6TCQMl9yXR9gThdj5iKJdOuZaqernBx9g4h0ppT5kuv6YM4cSsOa5uKIdEu1mitBTo6+QUQ6U8p8yXV9kJEi57dBqMzxg8RU6uNop5NtdGpe/qWPQn2DgWW+oZR5kuv6ICMFkU6EqdSHaU7zGYnKBPXGNISpUBblmwOuV07zc+ow146yuXgvU81I17JMc1MSeyjUX3TII9RvDqNXxmlZ9wXmWoG5As1ZmyoT1Js/qxjBzUGXlvkkYa4VmCvQLNNVJqg3piFMhZLg5qBLy7ovoBWYK9CMdJUJ6hHpZMDNQZeWdV9grhWYK0A7nStwc9ClZd0XmGsF5go0R5lUJqg3piFMhZLg5qALWpt0gbkC3VmbKt3XMvRpJYiihaG6eokMo1fGgTldYK7AxKxNUsSrUBbcHHSBOV1gLsfErE1SxKvQGlCmC8zpEq85E7M2AQCA35iYtQkAAPzGxKxNAADgNyZmbQIAAL9xtgoiAAAMhomVrbsoxi62vSV/BMWdQwTKdIE5XSI3N1Ck63UEzxTaAMp0gTldIjdnPtI9vTu/cZyc3ZrPD/iLs3f+Jnvx8v3klAzbJhbYhk0HYBufvfuTdFfy+2+/+/7L9/mbfinsD5TpAnO6jM6c8UhHJv978sq/fe+YpJS9+Ndbt+msClRe8vS9f3rvfv7Z9gBu/v4p3eeM7ZpufnYr/SOcZq9Mn/WgQJkuMKfL+MwZj3RF+p5SU/yt9B+ZVIE8cvx4fpu8bBLB3icbpjvwXfnmpTdjAsp0gTldxmfOfKR7l8X/03lagmUvMoV353NaYn6b3kiyDcUHIPs8+6SmsPRmTECZLjCny/jMWSrTPb17UNwQMoXvsZSf/u03o7pZ9AbKdIE5XcZnzko73dk7vyVJf/u49OKd+1n1/d1/p/GefbYtg79f1PULhX42APQGynSBOV3GZ85W3+vj+fwv3z/IOnWYQvqCt37KduqwXZ99/DL5OyRedur0B8p0gTldRmfOxXg6AAAYFkQ6AED8INIBAOIHkQ4AED+IdACA+EGkAwDEDyIdACB+hol0SzLTJxarUAHKdIE5XaIyN0Sk2xyS6YxX7UtngzJQpgvM6RKZuSEi3YrN2740vqZsvECZLjCnS2TmBoh0m8P8LrG+8qPJhU+fP0p/e/5o/fyHE7qi9uZwgmV7KkCZLjCnS2zmBoh053t51X89m1J7TOHswsnmcJpk/0AOlOkCc7rEZm6ASMeUzSaTndTaflkhe0FLzSusTFYCynSBOV1iMzdgmY6WhI9KCsnP9MMVKRrTF4ADZbrAnC6xmRuwnS4WhQ6AMl1gTpfYzA3R97pkRd4thbRYfOVktXMUVLHYBVCmC8zpEpm5QUYOL9hAnUuP+P1hN72B7ATb1OkEKNMF5nSJy9wwz0is+OBrVvglzZ5vvMq6r4m5wLqv3QBlusCcLlGZ8+i514Dq/L4AZbrAnC6hmkOkCxko0wXmdAnVHCJdyECZLjCnS6jmPIp0AABgCUQ6AED8INIBAOIHkQ4AED+IdACA+EGkAwDEDyIdACB+EOkAAPGDSAcAiB9EOgBA/CDSAQDiB5EOABA/iHQAgPhBpAMAxA8iHQAgfoxEuuWE8uK99s02h2Q5oZz1X51UP92aqvl8b8IhU9dXdu5AbesBcKGs+yy81yTCkrrzPb795rCkjhwlSEsibGW6+iY1Fi98xH/7/D/v1ncTyK06r25Q3YWtZSH31zEZ6bourto5LS8g0llV1n0W3msSYUvdcsIWOD3fm5a3iy/SGTdX36TGYrLDJu9czyaVSEd2U4x01V3cRzqa0M0veFZpQt1gaadoshvDhbJIsaVuPWNvrcoHjsqltUzXEel2vs4C3PK5mXqka/smlbXJDEa6NKuQdHx5czK5eI/cQHZJrtk939tdzSYXjzKD/HOyslAe4R+kG/yanjX59IVy6boU6R7enOx8hyZvOblwr7Rp9pXpNr/6Ot+GyuKvBIcdGhfK2CWbHqxsjHxPsvnhZLLzZgCaRFhTt2AHpj8efH1SzkjhWRJhyVy2SdlZOQotLvyIZsjN4bfzb34hO3JxXZeyK/WdX+7pzjzD5rs8Ks5F9q9jskz3S7rW7YyUj9PfSHPH+R75941Z9k56htnnZYO0VH3x5pSttDbJCrtcYxbpLt5ki7JtDp+bkUUo801LX8lK5/s8+dkrwWGHxoUyVg1bkR2psbqnADSJsKZuRbeg1pbVjBSgJRGWzPFNKs6qke5TtozilU9JpFtXjlxc16XsSnwXl3tuf78U6fJzkf3rGG2n26WpfpO8QVxNpkuagMn00eaXk/ycss/zguj53s5HyZeHdAtS0vh8Vmso4TrTXz6jG7EvyjYtDpn+NiUO8q/KX20ddmhcKGOlkwU9QuV71rOXHtHKmveaRFhTx7yt6NWVloBLhgK0JMKaOVYNLTurRrrfHJJYuZiS0mRpX7Zbdl2Xsiv9/vxyL2XYvMJbPhe5v47RSJedDqmaH5GWSHL+vE9rwToVSp/nBllpmnzCfqtUxotIR94kcZ/9VmxaHLK8DUl+9kpw2KFxoYxetGzpdWYsO8569ty3f51t6bUmEfbULclxlkzeP//q72aTcqQLzJIIa+b4LyVn1Uh3ksav9Av2yX6lfXmA5GJL2bXsm50Nz7B5pCvORfavY7Kd7sGEfBNt7VwRg+sZ+T/vylqyUmnp8/xsWAWdmFnxP0Wp8FntkSg6W4pNi0NWtyleCQ47NC6U0eOssupI+XsWZI8X7/mvSYQ9dewyY5cQ/aQc6QKzJMKauSW7k5ac1SIdOc6KFEp2y/sWPRJ043J2rV3uWYbNdynORfavYzLSkSSVDa5oxRmRToQLZfnddCvSJZ+TRhB29/ZakwiL6sghn6dX/eQbf/8PD/fijHTmzZFNqs5qkY7cQxasxNUc6crZtX658wzrVaTLS73nexdvUgPsLLpKxazsudX/3RTpik3LtVdxpBMcdmhcKCN584293SQ3VlRYUn7/A9LC67kmERbVpe8si8xVbacLzJIIa+bIJoUz1uBWDEskLxcXPk0/Z7XX/fJu5UhXyq71yz1hGbZWez3fk7/UzdZeqy2ZO0ekNyuN9X8hbunM4u75HutApu2JHyXJl/VB6sXPIunFpuUeCXGkExx2aFwoI7/9+c5R4S47zio9PO2C816TCIvqNof/6Qe8/ecRGa5QRLngLImwZo5sUjhL65rfYdsxSKRb7fwXGg13y/su85YVFulK2bV6KecZNt+lfC5yfx2jPRKkRJn3XrM7Iim4PjdjJU96PvnnZC/ee02LnLT3mhc+d4tjN0W60qalDnNxpBMcdmhcKKNfQ/7kmbHaKJP6NeyhJhE21a1YtScbtSCKdIFYEmHN3JKO/cicVbbbZ5GO9OzyUmGx7zIfHMerukV2rV/K2aHzXfLvkP3rmIx0L9DYv+YjEhessXOaljBTay/eyytR2fDV85uka5iS1sIv/oYmlnz63JulYzdGutKm2SEbI932YYfGhbIkq7GWjRUjh1+qt4h4qEmETXXZw6902OxHi6IlMzhLIqyZo5vkzpLks/RAXxyWI11aztvPe2+zfcluX5QjXZFda5d7lmFLu2TnIvvXsT+XSeUxQiCDOWWVJ5vGAHKbLj6Ys5ldEek8xJiyL2/mpbuRgNymiwfmrGZXRDoPMaSMzGsSYGtSL5DbdBncnOXsikjnIYaUbQ4nL5k4Tkggt+kyuDnL2RVzDgMA4geRDgAQP4h0AID4QaQDAMQPIh0AIH4Q6QAIjOVksr8c20jJviDSARAWi0sP9/ZVFosBiZlI90cZ5LbS39dAOhwCZdqM3tz53n76H5nYUnHHcZtDpBsEKNNm9OYQ6bRApBsEKNMG5pak9kpm8VVk3OZcRbpr16/FqlAHKNMG5tgcbOqPiI7bnKNId+2tO2/pO/RboQ5Qpg3M6TJuc476Xq/fuXPnupuvCgKJPBFzrusDzOkybnMo0w0ClGkDc3y5QQs9EjGbQzvdIECZNqM3pz2Sbtzm0Pc6CFCmzejNkSEmzTyZz1++nyRP785f+UP+gzFuc4h0gwBlXZy9k16vj+f0usX1WmZz2BLpiLb7T/dQAAAUZElEQVTH30yefXxQ+sEZtzlEukGAsg6e0JLJ6QH5Hddrla4xw2m0e/re/dIP/v64zSHSDQKUtXN646fpBfrsk2PyAtdrBbLeQmuPRHpXOHv3D8nT7x3zH+l7l1NcnqR/ININApR1QUJbWmudzw8SXK8qnN26cZw8eYUq4z/4J+POc4h0wEtIpDt7+5iU63C9qlEU5op7BMGyOal+2+GsqEQ60l4i6tSR8jDuzFcHyrrIq6unB06vV8/N0cf7O2qvqbIB2unkxuI50iRAJdI9TmsSok4dKRHxZj4doKyLUqRDO508vPz77OPb7DK9rdiXc1nbW0SR7uy77x8kopuFlIjxZj4RUNYFyV3ksn324/vq1+uIzT2ez28c64+nQ6RL666f/M+PD4SdOvbOLlqk8s6Ir9diPF3psmWM21xWdbXzNFifSBdPO93j26TKKurUkfIQb+bTAcq0gbkliXHtT0oIkUl9j0jnuTnpSJeW4p6JynQJLlsNoEyb0ZvjMc7OnMOIdPTBnPn8tm47XcSPDutgLNnjUZYxenOIdFqojjIRdepIJDDm6WB0MJbs8SjLgDlee7UyuzoiHaHHeDpEuirGkj0eZRkwx2ZXV26mQ6TrjUQCEemqGEv2eJRlwJwuMqlHpGtDxgLa6SoYS/Z4lGXAnC4yqUeka8OYhjAV6gBl2ozbnNTTYA3IpH5kkW45mewvLz2SPYYxDeYVrmc0P5zvNadm/fxRy0tLQJk2MKeLTOqHiXQuzIki3YKsnKswW70xDTYU7hzRH55lPijTZvTmIhxl4sKcINLRAvK+gkljGmwofJ10xi9f9+yyhTJtRm9OO9LJMMyjnS7MmYh0HrOevfGtR8nmgw8vPaJuyP/oInL7ZD7+yWTK3iK/8uRmL6dJkm+Z/VQnwImuhlYWLk7MLfPnXpVXCJPJN0OV6eybE9Vel6T2qjAy0ZgGGwrf/P5Jsr76oFDIfs5o9ZxE9PQ1ranzhkn+kvzLtsx+tjloaNoMcKIrZ8o0kUjYQB39jsxpPPEqbW6wSGffnLBHgo5MlB+CbUyDDYX7y7R4ursqKbxS3BX4z1XpkensZfq/fMsrnaXbhqbNECe6cqVMl+50DTV4M3xzw0U6++YiH2WSKlxNk8V+SWGyYGXeVVEO5jWC3UwhuW2Utsx/NtJQ4Q9yoitHyrTpzgoDRjon5thIE/XGJZnUDxbprJuLP9Kdf+vhaydlhXSSrwsnZYWlamdZId+y9LOBhkgX5ERXjpRp052uASOdE3OLKXn0dRlVO519c6JIR1v2FEYmGtNgRWHyiw+nSVUhDU3lYvFO0ZGTvcwMZ60i7a0jwqbNMCe6cqVMF4mEDdZO58TcOWsniWuUiX1zgkinMJJO3uCAl+0yLe+mCkkc2hzusOp9tUFzc5jeHrjH0ifZltnPNgeips2eE13FrkyT0Zs7Z/fU2CKdbXPiUSbmDQ6Y+UjiSUmXFFXfePWIBiWiq9Z9vUN+7Fa6r7Mts5/q9JjoaqzKuhi9uXRHcrkv4qq9WjcnLNMJI92T+fzl+6ENDhuaAMfT+Y5EwiKfTiKNBdNkIf+0ZoZM6sf13KuwXEwqXsWosFAGh7kioqZNZyg+XZ3RnS5MESZGJvWjinTNcyUUrU2hNDo5IqamTVeoPl2d0Z0uRDoxMqkfVaRrJi3FBTY4zBExNW06QvuZw+50xRzpMGuTLiorW9+6caw/OCxehUlj02YzxpIdrDKLkS72djpdZFIf72Vaj3St94yiMKc+OCxehQTVC9ZYssNV1vF0NW0b0V2JPm5zrZzdms/FvWCIdAqcHmi308WrMGlr2mzAWLKDVdbxdPUT0tEv6v5CpGvt/iLFj7O3j7XNxXuZSkc6Xl/VHhwWr0IdjCU7UmWnN36a3kdFt9WRX69JR/fXE3JRigskIzcn/zTY4/n8xrH+4LBhFCpt7BCZVA/U2qS0sT3IBSrq/pLq/xqmk8yRuc7uL1EjE8w5exos3kin0x0mkaChehCVNu5BxxBEEulE3V8el0yUNtanq/uL1LdgbgtnT4PFq1AHiQRFHum67qfCMl3L+VWIO7O1d389vXs7gblt5J8Ga0ZKw+AKL3du7BCJBPkQ6S53baxP1/30LLx2uoYzMKwtn11dHO/Obh2k/4e5LaSfBmtBSsPgCq1GOtXJEWVS7UE7ncVI13U/JReoqPtr5NdrFyzQwdw2Sk+DNSCloYdCqUu+89SsRjrVyRGl0j1M32t5C5vXa8f9tNd4univ1y7YTGEHg5iT2Vd81g1HMWrG2ZzD+grlqnGNp3Z5CytVMbXJEaUSPlikc6MsumeaXJjrrL22YNtcr0hn3ZyJSCeFfvf19Tt37lzX3Jco/I8adiKd3uSIbVy/rpvqXjhSpo3t67VfpBuzuX6RzrY5YaRbWlgbbLgynYPMpzw5orFkN+qQ2abp1EZ9vcKcLuFFuiVbbczseq+DtdOpKRQspSazLp3q5IgyqQ4l0mkoi3NGDhfmEiJPczJn2+ZcRjp1dc3j6Qw3OoWb+WwgkaCQI51NZFIfeWZbTCbqM5hGH+k6GHekSwsW6f2RjNbf5y/WV/46e5Gmf7GbLKdEKtvQHDKpHm6UiZfKVNRFn9lIiVi+ecmROXuRzoS6EGqv1rrDyJiu1aWHrx6RWwR78bsZXaGIuUvOX/vH107yz9puozaaNn3sezWjzOceRL/NVRRaGPfqZd+rEXUB9EjYu80WReBzKoq/lf47T62m79Gl2dKXnWVlKzeH4SKdC2W6yKQ+7syW0Ct0mqiummPbnLUynRF1AYyns5j5rrKcsiC3R/YiM7jHVlQji60Rg1fbs5SdCr+Xkc6UMm1kUh91ZqOr/ynmNyfm7EU6E+rGHenoLYCEqfx+kBl8jeWhxetTmdvsiCKdKWXKy6mpqIs8s2kO27RtznKZrqe6ptrr9vp0zdM2G9PQqMeSQlKtX1/5lEgjS4LnL67QNs60wr+++sUHR7z+35oBR1N7NaZsc7ibbqI8b064kc5cZrNJn/np9PdtN2dGnSjSCdena5m2WSoD+Zj5eFdNGtgv3tzP+nSYQfqCN37KdIfF1SPhQBmJcSybSkuTZ7D5JJ1kNiOl4e0egDak8pztvtd+6sSjTASrNrVM22xMQ6OeXgptP1Cng7FkB6uMZLGlyqPCpfPrJOrMprFGLqOqqB5ZGH8Svusi0tk2Jx3pCA3TNkt90eDTNtucyySmVRDLW9ickWNBw9xWI0knMqmPei4TjRo/o6rIs0hn3ZxwPF3D+nRN0zYb09CoR2YbIQ0nYFAgJaaVrctb2Ix0m8PdZKExuFgm9YNntiFn9mukqgiRLmlan65x2mZjGhr1yGwjRGnjHqgWTYwlu8++SqdmQJIZZFIfd2bTnTKnqsjXSGfLnPwok+Zpm41paNQjs40QpY31iWm9V6WNNTn/r/r7yqQ+3sxm7OkSRLqm0nHLtM3GNDTqkdlGiNLGxgl1YI78xpoozUQvd34V4jXXh6oiRLqGRqeWaZuNaWjUI7ONEKWNTRPswBz5jbUhZRO95iaZ1MdsTn2YuvD8EOkSS41OkWc+Uct6sANz5Dfuw1JjOo4EkQ6RTo8QVszxv++1ecqwoAfm2F73Jc1p6gOHZTLM4JnNnrll3k6nPKquqsjXSOe071URYxoaCGBtsKRhyrCwB+Y4WOEqspHDojPo7agGxtNpEUCku/bVr321xzoSohMwkGgB21OGDTYwx8zNAWW6pm06z8z+PUKdqiJEOvXn6oxpEPOV9LL9SudWjafm6mkwwZRhgw3MCWDhSG/b6fx+pokinIGjm2oyPYt0QzwNpvxcXS29SkjI6RvpflbDRuYTThk23MCcvpHOvjJ/+177Xa8uMptwBo4CuTXBvYt0ts1JjzKR5vKfFJBpdL/+ta99rc96rw4yn3jKsOEG5vge6WTXmCAGX77fdr2avq36fr0mbc+lU54QY6KRTYh0dXo+rm5eYc9VENUUVqe3kpknTOfOIJPsAReOtK7sW3JVr1NeKI71elU3l3RFutMbP03LdKIWk6jMqasTtdOp9ofV0mteYa9GYkQ6/5RJ8uwT2oET7/WqZ65pBg4OUSUa2VStPxmvevWdidN1pNN5rq6WUwKKdKwWxZ5NWl/9wWRCFly+8OkLNy+c8DfDjHQWa69GlEmS1lpJ7T+S69WcOfEMHBkk0olGNgV8jzChzvwoE+8iXXOnDl80jc/QzNZVI7PRz9LQtchedSY/wkhnW5kkZ28fk3JdSNerB+aEZbqQzZlRt12m63vZeqew+WbBV+J47SQ5fzWbr5mvu1F6s4v+xeAeyRbTcwiidWUqnB6EdL16YO4sunY6I+rGHenyBdU2H9QMlt7swscy3Z/92Z9ZinRGlKmQPzgsUje6zCYBUSUa2WTQnH6Xt445M+rGHekMlem8i3T2hiA6LdORauuzH9+3db2K8TuzSeBgPN1WMik/F777MwORDmW6ngr5omlFVb8wGHY7nb1IZ0aZLI/n8xvHkYx/NWOODFE3MxOndrFMlEy7kc6IOpW+16abRc1COJmv2qfDDG4OL5C1JJOw+16/etlSO50ZZX2oKhpbZiP9rroD+6vJDCjSGVGnUKZrHHxds+Bb5hP82bqsWKeWvj65Tsi1y73G0/moLMOyuQAy20Iz2FWT2ecytRHpbJuTj3TNg69rFjzLfKKDmLKnTS19nt0cREdx66eFajI9zWyWzeWPWStRTaZnkc66OZV2uqbB19Wt1DKf1En2GswpysHaxzNFLeMg0skDc5S09jbcnMNjiHTd00p6m/k6N3YIlGkDc7RMp75QbiCRzpY5lWckmgZf1yyMM/OpAWXajN6cXpirnx8iXQtNg69rFnzKfGHg1dObvjPyzLbSDHOJz5HOBaqRrntayfFlPg2gTBtj5tQalD25Xs2Np+uT58YQ6QIbT+crtfRpX3IjUpZRTWafSCe+MP2+XvtgzFz0ka6JmgVEum5q6UOkk6eaTEQ6eYyZQ6Trr1BMfJctlJmhTwvn5Z+r4F3Dp/r6kRV6tQ0rqfPEnF+RrkfhxkA6HIJIp425zIYynW6eQ5nOaeZDpGthLJGuR71/5JGuhzlEOmYBka4bg8r0s+zQEvT4owRSd4NxR7o+5hDpmIUeNwtEOrs3B19yXR+krkSpjQI1l0031G+USR9zxmfidIGJSCeFVLtkiC2dWtQyDiKdPMau17DNnb+qPIDYmLnRRjo5OXYN+pD5FKglG5FOHnOZLWxzq0tya+YWGDOH2mtvhWONdPrJDv16VWegzOadOfVRJsbMIdL1VjjSdjpnynzJdX0wZy7sSLdAmU4JRLpBMKgs7OtVHXPmAr1H8B4J9Qf9jZlDpOutEJFOXRkina65QCOdNsbMIdL1VohIZ1eZL7muD+bM4R6haQ59r70V6hsMIPM1T//iTpknua4Pxsz12HdYA+vZ0OPpQjSnG+nsXLZBKpSkZTm1piSNXZkQU6kP1tzmcHdzuK+x9ua4zWlGOreXrcy+xozYomWaZihrp3ll6zGaIzGOrefcvS3M5WhGOly2yrQspwZaqdxWR369JizSLadS4+lgrkAz0uGyVaZlObXR5To1KrfVkV+vhAUNc0uJMh3MFWhGOly2yrQspwZlrVRuq7ivkoa6ZCE1ng7mCnqX6RJctnKgwq9L5bY68pKJGjBXgHY6V7QspwZlrVRuqyO/XpN88XmZdjqYK9Duey1dtlL0KTvHUe6u9IPJAGWMamuTDFGbU4h0MFdgYjydFPEqtAaUMXBbLbHM13uddm8McwV+zcRpYd+AgTIObqtlVMYMw1yOs0gHAACDgUgHAIgfRDoAQPwg0gEA4geRDgAQPy4inWBEj9ogn9rmijuHCJTpAnO6RG5uoEjX6wieKbQBlOkCc7pEbs58pHt6d37jODm7NZ8f8Bdn7/xN9uLl+8kpGcxILLANmw7ANj579yfpruT33373/Zfv8zf9UtgfKNMF5nQZnTnjkY5MifXklX/73jFJKXvxr7du02eNqbzk6Xv/9N79/LPtYY38/VO6zxnbNd387Fb6RzjNXpk+60GBMl1gTpfxmTMe6Yr0PaWm+FvpP/KoMXkQ7/H8NnnZJIK9TzZMd+C78s1Lb8YElOkCc7qMz5z5SPcui/+n87QEy15kCu/O57TE/Da9kWQbig9A9nn2SU1h6c2YgDJdYE6X8ZmzVKZ7eveguCFkCt9jKT/9229GdbPoDZTpAnO6jM+clXa6s3d+S5L+9nHpxTv3s+r7u/9O4z37bFsGf7+o6xcK/WwA6A2U6QJzuozPnK2+18fz+V++f5B16jCF9AVv/ZTt1GG7Pvv4ZfJ3SLzs1OkPlOkCc7qMzhyekQAAxA8iHQAgfhDpAADxg0gHAIgfRDoAQPwg0gEA4geRDgAQP8NEOrqUm/wKRwDK9IE5XaIyN0Sk2xySRXlXk90BvjtQoEwXmNMlMnNDRDq++vjy0qMBvjxMoEwXmNMlMnMDRLrNYX6XWF/50eTCp88fpb89f7R+/sPJhGjdHEotUD4ioEwXmNMlNnMDRLrSGuTr2ZTaYwpnF042h9Mk+wdyoEwXmNMlNnMDRDqmbDaZ7KTW9ssK2QtaauZFZ0CBMl1gTpfYzA1YpqMl4aOSQvIz/XBFisb0BeBAmS4wp0ts5gZsp4tFoQOgTBeY0yU2c0P0vS5ZkXdLIS0WXzlZ7RwFVSx2AZTpAnO6RGZukJHDCzZQ59Ijfn/YTW8gO8E2dToBynSBOV3iMjfMMxIrPviaFX5Js+cbr7Lua2IusO5rN0CZLjCnS1TmPHruNaA6vy9AmS4wp0uo5hDpQgbKdIE5XUI1h0gXMlCmC8zpEqo5jyIdAABYApEOABA/iHQAgPhBpAMAxA8iHQAgfhDpAADxg0gHAIgfRDoAQPwg0gEA4geRDgAQP4h0AID4QaQDAMQPIh0AIH4Q6QAA8fP/A5MgnYXAABGlAAAAAElFTkSuQmCC" /></p>
+</div>
+<div id="discusión-y-limitaciones-y-conclusiones-del-estudio" class="section level2">
+<h2>Discusión y limitaciones y conclusiones del estudio</h2>
+<p>El objetivo principal del estudio era la construcción de un
+contenedor <code>SummarizedExperiment</code> con la finalidad de
+practicar y trabajar con dicha función, así como realizar una
+exploración de los datos de expresión de metabolómica y una introducción
+al trabajo con los mismos. Se ha trabajado con el archivo y enfrentado
+situaciones, que en el día a día como bioinformático podrían o no ser
+reales. Se han eliminado datos que no sirven, realizado filtrados de
+información y enfocado el trabajo.</p>
+<p>Además, se han determinado un conjunto de características o
+metabolitos de interés, ya que podrían emplearse como predictores o al
+menos indicadores de la enfermedad. De los 63 inicales, se han
+determinado que un total de 16 siguen una distribución normal y
+presentan diferencias significativas. Tal y como se puede observar en la
+figura, los individuos catalogados como <code>cachexic</code> presentan
+un nivel medio superior de los diferentes metabolitos.</p>
+<p>Una de las limitaciones a comentar podría ser, se han determinado que
+16 de ellos podrían ser válidos, ¿qué sucederá con los 47 restantes? Un
+total de 44 no siguen distribución normal, por eso no se han incluido en
+el estudio, pero podría ser interesante la realización del homólogo no
+psaramétrico del ANOVA (test de U de Mann-Whitney o Kruskal-Wallis)
+sobre los mismos para determinar si alguno más podría ser de
+interés.</p>
+<p>Por otro lado, se podrían realizar pruebas sobre un mayor número de
+indivuiduos y tener en cuenta más metabolitos, quizás focalizados en los
+relacionados con los 16 que se han seleccionado.</p>
 </div>
 
 
